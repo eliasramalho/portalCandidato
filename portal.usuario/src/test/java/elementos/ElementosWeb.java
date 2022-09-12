@@ -36,8 +36,15 @@ public class ElementosWeb {
 		//xpath da mensagem de validacao
 		public By msgSucesso = By.xpath("//h1[text()='email enviado.']");
 		
+		//xpath modal de permissao requerida
+		public By nomeResponsavel = By.id("mat-input-6");
+		public By emailResponsavel = By.id("mat-input-7");
+		public By btnProsseguir = By.xpath("//span[text()='prosseguir']");
+		
+		
 		//xpath dos elementos do menu login
 		public By email = By.xpath("//*[@id=\"mat-input-4\"]");
+		
 		public By senha = By.xpath("//*[@id=\"mat-input-5\"]");
 		public By btnFazerLogin = By.xpath("//span[text()='fazer login ']");
 		
@@ -63,9 +70,12 @@ public class ElementosWeb {
 		public By cRnascimento = By.xpath("//*[@id=\"mat-input-1\"]");
 		public By cRemail = By.xpath("//*[@id=\"mat-input-2\"]");
 		public By cRsenha = By.xpath("//*[@id=\"mat-input-3\"]");
-		public By cVaqui = By.xpath("//div[@class='upload-container']");
-		public By cRtermos = By.xpath("//label[@for='mat-checkbox-7-input']");
-		public By cRaviso = By.xpath("//label[@for='mat-checkbox-8-input']");
+		public By cRCurriculo = By.xpath("//div[@class='upload-container']");
+		public By cRtermos = By.xpath("//*[@id=\"mat-checkbox-1\"]/label/div");
+		public By cREntendi = By.xpath("//span[text()='entendi']");
+		public By cRaviso = By.xpath("//*[@id=\"mat-checkbox-2\"]/label/div");
+		public By cRSalvarCadastro = By.xpath("//span[text()=' salvar cadastro ']");
+		public By cRMsgSucesso = By.xpath("");
 		
 		
 		//xpath elementos Easy Apply

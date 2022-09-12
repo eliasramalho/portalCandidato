@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		
 		features = "src/test/resources/features",
 		glue = "steps",
-		tags = "@vaforitarVaga",
+		tags = "@teste",
 		monochrome = true,
 		dryRun = false,
 		plugin = {"pretty","html:target/cucumber-report.html"},
