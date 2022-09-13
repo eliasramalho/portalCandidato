@@ -1,6 +1,6 @@
 #language: pt
 
-@regressivos @criarConta
+ @criarConta
 Funcionalidade: Criar Conta
 Como usuario
 Quero criar nova conta
@@ -27,28 +27,28 @@ Entao validamos a mensagem de aviso
 @negativo @criarConta
 Cenario: Preencher o cadastro com data de nascimento invalida
 Quando for criar a conta
-E preencher todos os campos
+E preencher os campos com os dados validos
 E campo idade for preenchido com dado invalido
-E clicar no botao criar conta
-Entao validamos mensagem de sucesso
+E clicar no botao de criar conta
+Entao validamos mensagem de sucesso do sistema
 
 @negativo @criarConta
 Cenario: Preencher cadastro com email invalido
-Quando preencher o campo email
-E os dados forem invalidos
-Entao validamos a mensagem de retorno
+Quando colocar os dados no capos email
+E as informacoes dos dados forem invalidas
+Entao validamos a mensagem de erro no campo email
 
 @negativo @criarConta
-Cenario: Prencher cadastro com telefone invalido
+Cenario: Preencher cadastro com telefone invalido
 Quando preencher o campo telefone
 E os dados estiverem incorretos
 Entao sistema retorna mensagem de erro no campo
 
 @negativo @criarConta @validarSenha
-Cenario: Prencher o cadastro senha sem letra minuscula
+Cenario: Prencher formulario senha sem letra minuscula
 Quando clicar no campo senha
 E preencher dados sem uma letra minuscula
-Entao o sistema retorna uma mensagem de aviso
+Entao valido o retorno do sistema
 
 @negativo @criarConta @validarSenha
 Cenario: Prencher cadastro senha sem letra maiuscula
@@ -58,15 +58,15 @@ Entao validamos a mensagem do sistema
 
 @negativo @criarConta @validarSenha
 Cenario: Prencher cadastro senha sem oito caracteres
-Quando clicar no campo senha
-E colocar os dados que nao contem oito caracteres
+Quando Clicar no campo de senha
+E Inserir dados invalidos
 Entao sistema retorna uma mensagem
 
 @negativo @criarConta @validarSenha
 Cenario: Prencher cadastro senha sem numeral 
 Quando preenher o campo senha
 E inseir dados que nao contem numeral
-Entao validamos a mensagem de aviso
+Entao Validamos a mensagem de aviso de retorno do sistema
 
 
 

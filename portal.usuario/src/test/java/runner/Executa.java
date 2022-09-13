@@ -1,5 +1,6 @@
 package runner;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,6 +49,7 @@ public class Executa extends DriversFactory {
 		driver.get(url);
 		
 	}
+	//@AfterClass
 	 public static void fecharNavegador() {
 		 driver.quit();
 	 }

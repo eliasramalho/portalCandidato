@@ -37,8 +37,8 @@ public class ElementosWeb {
 		public By msgSucesso = By.xpath("//h1[text()='email enviado.']");
 		
 		//xpath modal de permissao requerida
-		public By nomeResponsavel = By.id("mat-input-6");
-		public By emailResponsavel = By.id("mat-input-7");
+		public By nomeResponsavel = By.id("mat-input-4");
+		public By emailResponsavel = By.id("mat-input-5");
 		public By btnProsseguir = By.xpath("//span[text()='prosseguir']");
 		
 		
@@ -76,6 +76,13 @@ public class ElementosWeb {
 		public By cRaviso = By.xpath("//*[@id=\"mat-checkbox-2\"]/label/div");
 		public By cRSalvarCadastro = By.xpath("//span[text()=' salvar cadastro ']");
 		public By cRMsgSucesso = By.xpath("");
+		public By msgErroNome = By.xpath("//*[text()='Nome do Responsável']");
+		public By msgErroEmail = By.xpath("//span[text()='Por favor, forneça um formato de Email válido']");
+		public By msgSenhaNumeral = By.xpath("//p[text()='Pelo menos um Número ou Símbolo']");
+		public By msgSenhaMinuscula = By.xpath("//p[text()='Pelo menos uma Letra Minúscula']");
+		public By msgSenhaMaiuscula = By.xpath("//p[text()='Pelo menos uma Letra Maiúscula']");
+		public By msgSenhaOito = By.xpath("//p[text()='Pelo menos Oito Caracteres']");
+		
 		
 		
 		//xpath elementos Easy Apply
@@ -91,12 +98,13 @@ public class ElementosWeb {
 		
 		//xpath elementos em Prod
 		public By cookies = By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]");
-		public By emailProd = By.xpath("//*[@id=\"mat-input-0\"]");
-		public By senhaProd = By.xpath("//*[@id=\"mat-input-1\"]");
-		public By fazerLoginPtod = By.xpath("//span[text()='fazer login ']");
+		//public By emailProd = By.xpath("//*[@id=\"mat-input-0\"]");
+		//public By senhaProd = By.xpath("//*[@id=\"mat-input-1\"]");
+		//public By fazerLoginPtod = By.xpath("//span[text()='fazer login ']");
 		
-		public By btnPerfil = By.xpath("//*[@id=\"profileOptionsButton\"]/img");
-		public By emailEnviado = By.xpath("//h1[text()='email enviado.']");
+		//public By btnPerfil = By.xpath("//*[@id=\"profileOptionsButton\"]/img");
+		//public By emailEnviado = By.xpath("//h1[text()='email enviado.']");
+		
 		
 		
 }
