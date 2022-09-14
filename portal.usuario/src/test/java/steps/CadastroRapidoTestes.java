@@ -48,7 +48,7 @@ public class CadastroRapidoTestes {
 
 	@Entao("sistema realiza o cadastro de usuario")
 	public void sistemaRealizaOCadastroDeUsuario() throws IOException {
-		metodos.validarTexto(el.leveParaLogin, "", "validando a mensagem de sucesso");
+		metodos.validarTexto(el.btnLeveParaLogin, "", "validando a mensagem de sucesso");
 		metodos.screenShot("cadastro_rapido_sucesso");
 		metodos.esperar(3000);
 

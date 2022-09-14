@@ -1,6 +1,6 @@
 #language: pt
 
- @criarConta
+@regressivos @criarConta
 Funcionalidade: Criar Conta
 Como usuario
 Quero criar nova conta
@@ -9,22 +9,22 @@ Para acessar o portal
 Contexto: acessar a tela de cadastro comum
 Dado que eu esteja na tela de login
 
-@positivo @smoke
+@positivo @smoke 
 Cenario: Realizar cadastro de usuario 
 Quando eu clicar no botao criar conta
-E preencher os campos com dados validos
+E preencher formulario com dados validos
 E aceitar os termos e condicoes e aviso de privacidade
 E clicar no botao criar conta
 Entao validamos mensagem de sucesso
 
-@negativo @criarConta
+@negativo @criarConta 
 Cenario: Preencher o cadastro com os campos todos em branco
 Quando deixar os campos em branco
 E clicar no botao fazer login
 Mas o botao nao esta clicavel
 Entao validamos a mensagem de aviso
 
-@negativo @criarConta
+@negativo @criarConta @teste
 Cenario: Preencher o cadastro com data de nascimento invalida
 Quando for criar a conta
 E preencher os campos com os dados validos
@@ -59,7 +59,7 @@ Entao validamos a mensagem do sistema
 @negativo @criarConta @validarSenha
 Cenario: Prencher cadastro senha sem oito caracteres
 Quando Clicar no campo de senha
-E Inserir dados invalidos
+E Inserir dados sem os oito caraceteres
 Entao sistema retorna uma mensagem
 
 @negativo @criarConta @validarSenha
@@ -67,6 +67,13 @@ Cenario: Prencher cadastro senha sem numeral
 Quando preenher o campo senha
 E inseir dados que nao contem numeral
 Entao Validamos a mensagem de aviso de retorno do sistema
+
+@negativo @criarConta @validarTermos
+Cenario: criar usuario e nao aceitar os termos de uso
+Quando preencher formulario para criar novo usuario
+E inserir o curriculo
+Mas nao aceitar os termos
+Entao botao criar conta nao fica selecionavel
 
 
 

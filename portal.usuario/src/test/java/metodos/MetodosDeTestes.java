@@ -162,4 +162,13 @@ public class MetodosDeTestes extends DriversFactory {
 
 		}
 	}
-}
+
+		public void aceitarTermos(String descricaoPasso) {
+			driver.findElement(By.xpath("//span[text()=' li e concordo com os Termos e Condições de Uso ']")).click();
+		    esperar(2000);
+		    driver.findElement(By.xpath("//span[text()='entendi']")).click();
+		    driver.findElement(By.xpath("//*[@id=\"mat-checkbox-6\"]/label")).click();
+		}
+		
+	}
+

@@ -49,7 +49,7 @@ public class Executa extends DriversFactory {
 		driver.get(url);
 		
 	}
-	//@AfterClass
+	@AfterClass
 	 public static void fecharNavegador() {
 		 driver.quit();
 	 }

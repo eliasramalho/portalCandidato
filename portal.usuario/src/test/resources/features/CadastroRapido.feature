@@ -88,7 +88,7 @@ Quando preencher todos os campos
 E no campo senha nao inserir os oito caracteres
 Entao sistema retorna uma mensagem com um aviso no campo
 
-@negativo @teste
+@negativo 
 Cenario: Preencher formulario e nao aceitar os termos e condicoes de uso
 Quando preencher os campos com dados validos
 E nao aceitar os termos de uso e condicoes

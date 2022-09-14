@@ -28,10 +28,12 @@ public class ElementosWeb {
 		public By entendi = By.xpath("//span[text()='entendi']");
 		public By avisoPrivacidade = By.xpath("//*[@id=\"mat-checkbox-6\"]/label");
 		public By criarConta = By.xpath("//span[text()='criar conta']");
-	
+			
 		
 		//elementos da pag de sucesso
-		public By leveParaLogin = By.xpath("//span[text()=' me leve para o login ']");
+		public By msgSucessoCriarConta = By.xpath("//h1[text()='Confirme sua conta no seu e-mail']");
+		public By btnLeveParaLogin = By.xpath("//span[text()=' me leve para o login ']");
+		
 		
 		//xpath da mensagem de validacao
 		public By msgSucesso = By.xpath("//h1[text()='email enviado.']");
