@@ -26,7 +26,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 public class Executa extends DriversFactory { 
 	
-	@BeforeClass
+	
 	public static void IniciarTeste() {
 		String prod = "https://myrandstad.randstad.com.br/#/login";
 		String url = "https://qa-fe-pca.randstad.com.br/#/";
@@ -49,9 +49,7 @@ public class Executa extends DriversFactory {
 		driver.get(url);
 		
 	}
-	@AfterClass
-	 public static void fecharNavegador() {
-		 driver.quit();
+   
 	 }
 
-}
+

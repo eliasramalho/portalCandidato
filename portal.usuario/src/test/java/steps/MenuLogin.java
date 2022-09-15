@@ -5,6 +5,7 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import metodos.MetodosDeTestes;
+import runner.Executa;
 
 public class MenuLogin {
 	MetodosDeTestes metodos = new MetodosDeTestes();
@@ -14,6 +15,7 @@ public class MenuLogin {
 
 	@Dado("que eu esteja no menu login")
 	public void queEuEstejaNoMenuLogin() {
+		Executa.IniciarTeste();
 	    
 	}
 	@Quando("preencher os campos email e senha corretamente")

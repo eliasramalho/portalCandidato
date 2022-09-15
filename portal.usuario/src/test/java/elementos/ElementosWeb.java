@@ -28,6 +28,8 @@ public class ElementosWeb {
 		public By entendi = By.xpath("//span[text()='entendi']");
 		public By avisoPrivacidade = By.xpath("//*[@id=\"mat-checkbox-6\"]/label");
 		public By criarConta = By.xpath("//span[text()='criar conta']");
+		public By msgEmailInvalido = By.xpath("//span[text()='Por favor, forneça um formato de Email válido']");
+		
 			
 		
 		//elementos da pag de sucesso

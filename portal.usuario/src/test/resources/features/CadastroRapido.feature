@@ -1,6 +1,6 @@
 #language: pt
 
- @CadastroRapido
+@regressivos @CadastroRapido
 Funcionalidade: Realizar cadastro rapido
 Como usuario 
 Quero acessar o site da randstand

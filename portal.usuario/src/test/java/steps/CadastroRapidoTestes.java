@@ -7,6 +7,7 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import metodos.MetodosDeTestes;
+import runner.Executa;
 
 public class CadastroRapidoTestes {
 	MetodosDeTestes metodos = new MetodosDeTestes();
@@ -14,6 +15,7 @@ public class CadastroRapidoTestes {
 
 	@Dado("que eu esteja na tela de cadastro rapido")
 	public void queEuEstejaNaTelaDeCadastroRapido() {
+		Executa.IniciarTeste();
 		metodos.clicar(el.cookies, "clicando nos cookeis");
 
 	}
@@ -22,7 +24,7 @@ public class CadastroRapidoTestes {
 	public void euPreencherOsDadosCorretamente() {
 		metodos.escrever(el.cRnomeCompleto, "teste cadastro rapido", "escrendo nome");
 		metodos.escrever(el.cRnascimento, "16121986", "escrevendo data de nascimento");
-		metodos.escrever(el.cRemail, "tanaka6630496@moenode.com", "preenchendo o email");
+		metodos.escrever(el.cRemail, "tanaka66396@moenode.com", "preenchendo o email");
 		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
 
 	}
@@ -137,7 +139,7 @@ public class CadastroRapidoTestes {
 		metodos.escrever(el.cRnascimento, "16122015", "escrevendo data de nascimento");
 		metodos.esperar(1000);
 		metodos.escrever(el.nomeResponsavel, "Tutor do Usuario Teste", "preenchendo nome do responsavel");
-		metodos.escrever(el.emailResponsavel, "test1246878243@teste.com", "preenchendo email do responsavel");
+		metodos.escrever(el.emailResponsavel, "test1246243@teste.com", "preenchendo email do responsavel");
 		metodos.esperar(1000);
 		metodos.clicar(el.btnProsseguir, "clicando no botao prosseguir");
 		metodos.esperar(1000);
@@ -147,7 +149,7 @@ public class CadastroRapidoTestes {
 	@Quando("preencher modal de validacao de usuaario")
 	public void preencherModalDeValidacaoDeUsuaario() {
 		metodos.escrever(el.cRnomeCompleto, "teste cadastro rapido", "escrendo nome");
-		metodos.escrever(el.cRemail, "tanaka6205446@moenode.com", "preenchendo o email");
+		metodos.escrever(el.cRemail, "tanaka65446@moenode.com", "preenchendo o email");
 		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
 		metodos.clicar(el.cRCurriculo, "clicando no upload de curriculo");
 		metodos.esperar(1000);
@@ -239,7 +241,7 @@ public class CadastroRapidoTestes {
 	public void preencherOsCampos() {
 		metodos.escrever(el.cRnomeCompleto, "teste senha sem numeral", "escrevendo nome");
 		metodos.escrever(el.cRnascimento, "16121986", "escrevendo data de nascimento");
-		metodos.escrever(el.cRemail, "tanaka6658496@mirnode.com", "preenchendo o email");
+		metodos.escrever(el.cRemail, "tanaka66496@mirnode.com", "preenchendo o email");
 		
 
 	}
@@ -263,7 +265,7 @@ public class CadastroRapidoTestes {
 	public void colocarNosDadosNosCampos() {
 		metodos.escrever(el.cRnomeCompleto, "teste senha sem numeral", "escrevendo nome");
 		metodos.escrever(el.cRnascimento, "16121986", "escrevendo data de nascimento");
-		metodos.escrever(el.cRemail, "tanaka6058496@mirnode.com", "preenchendo o email");
+		metodos.escrever(el.cRemail, "tanak6058496@mirnode.com", "preenchendo o email");
 		
 
 	}
@@ -286,7 +288,7 @@ public class CadastroRapidoTestes {
 	public void preencherOsCamposComDados() {
 		metodos.escrever(el.cRnomeCompleto, "teste senha sem numeral", "escrevendo nome");
 		metodos.escrever(el.cRnascimento, "16121986", "escrevendo data de nascimento");
-		metodos.escrever(el.cRemail, "tanaka605834496@mirnode.com", "preenchendo o email");
+		metodos.escrever(el.cRemail, "tana605834496@mirnode.com", "preenchendo o email");
 		
 
 	}
@@ -309,7 +311,7 @@ public class CadastroRapidoTestes {
 	public void preencherTodosOsCampos() {
 		metodos.escrever(el.cRnomeCompleto, "teste senha sem numeral", "escrevendo nome");
 		metodos.escrever(el.cRnascimento, "16121986", "escrevendo data de nascimento");
-		metodos.escrever(el.cRemail, "tana496@mirpode.com", "preenchendo o email");
+		metodos.escrever(el.cRemail, "tana496@mirjpode.com", "preenchendo o email");
 		
 
 	}
@@ -331,7 +333,7 @@ public class CadastroRapidoTestes {
 	@Quando("preencher os campos com dados validos")
 	public void preencherOsCamposComDadosValidos() {
 		metodos.escrever(el.cRnomeCompleto, "teste cadastro rapido", "escrendo nome");
-		metodos.escrever(el.cRemail, "tanasa60546@mokode.com", "preenchendo o email");
+		metodos.escrever(el.cRemail, "tanasa60546@maokode.com", "preenchendo o email");
 		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
 		
 	}

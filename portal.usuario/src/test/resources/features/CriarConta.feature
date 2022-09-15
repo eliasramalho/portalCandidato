@@ -1,6 +1,6 @@
 #language: pt
 
-@regressivos @criarConta
+@teste @criarConta
 Funcionalidade: Criar Conta
 Como usuario
 Quero criar nova conta
@@ -24,7 +24,7 @@ E clicar no botao fazer login
 Mas o botao nao esta clicavel
 Entao validamos a mensagem de aviso
 
-@negativo @criarConta @teste
+@negativo @criarConta 
 Cenario: Preencher o cadastro com data de nascimento invalida
 Quando for criar a conta
 E preencher os campos com os dados validos
@@ -32,13 +32,13 @@ E campo idade for preenchido com dado invalido
 E clicar no botao de criar conta
 Entao validamos mensagem de sucesso do sistema
 
-@negativo @criarConta
+@negativo @criarConta 
 Cenario: Preencher cadastro com email invalido
-Quando colocar os dados no capos email
+Quando colocar os dados no campo email
 E as informacoes dos dados forem invalidas
 Entao validamos a mensagem de erro no campo email
 
-@negativo @criarConta
+@negativo @criarConta  
 Cenario: Preencher cadastro com telefone invalido
 Quando preencher o campo telefone
 E os dados estiverem incorretos

@@ -5,6 +5,7 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import metodos.MetodosDeTestes;
+import runner.Executa;
 
 public class CriarContaTestes {
 
@@ -13,6 +14,7 @@ public class CriarContaTestes {
 
 	@Dado("que eu esteja na tela de login")
 	public void queEuEstejaNaTelaDeLogin() {
+		Executa.IniciarTeste();
 		metodos.clicar(el.cookies, "aceitando os cookies");
 		metodos.clicar(el.cliqueAqui, "acessando menu home");
 
@@ -28,7 +30,7 @@ public class CriarContaTestes {
 	public void preencherFormularioComDadosValidos() {
 		metodos.escrever(el.nomeCompleto, "teste de novo usuario", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "16121986", "preenchendo campo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "test1278906@teste.com", "preenchendo campo email");
+		metodos.escrever(el.emailCriarConta, "test12719tr06@teste.com", "preenchendo campo email");
 		metodos.escrever(el.telefone, "11988888888", "preenchendo campo telefone");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
@@ -50,9 +52,9 @@ public class CriarContaTestes {
 
 	@Entao("validamos mensagem de sucesso")
 	public void validamosMensagemDeSucesso() {
-       metodos.validarTexto(el.msgSucessoCriarConta, "", "validando a tela de sucesso");
-       metodos.screenShot("criar_conta_comum_sucesso");
-
+		metodos.validarTexto(el.msgSucessoCriarConta, "", "validando a tela de sucesso");
+		metodos.screenShot("criar_conta_comum_sucesso");
+		metodos.encerrarTeste();
 
 	}
 
@@ -69,7 +71,6 @@ public class CriarContaTestes {
 	public void clicarNoBotaoFazerLogin() {
 		metodos.clicar(el.telefone, null);
 		metodos.clicar(el.senhaCriarConta, null);
-		
 
 	}
 
@@ -83,7 +84,7 @@ public class CriarContaTestes {
 	public void validamosAMensagemDeAviso() {
 		metodos.esperar(4000);
 		metodos.screenShot("criar_conta_campos_em_branco");
-	
+		metodos.encerrarTeste();
 
 	}
 
@@ -96,7 +97,7 @@ public class CriarContaTestes {
 	@Quando("preencher os campos com os dados validos")
 	public void preencherOsCamposComOsDadosValidos() {
 		metodos.escrever(el.nomeCompleto, "teste data de nascimento invalida", "preenchendo campo nome");
-		metodos.escrever(el.emailCriarConta, "testy18006@teste.com", "preenchendo campo email");
+		metodos.escrever(el.emailCriarConta, "testy18uiu06@teste.com", "preenchendo campo email");
 		metodos.escrever(el.telefone, "11988888888", "preenchendo campo telefone");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
@@ -120,36 +121,60 @@ public class CriarContaTestes {
 	public void validamosMensagemDeSucessoDoSistema() {
 		metodos.esperar(3000);
 		metodos.screenShot("data_de_nascimento_invalido");
+		metodos.encerrarTeste();
 
 	}
 
-	@Quando("colocar os dados no capos email")
-	public void colocarOsDadosNoCaposEmail() {
+	@Quando("colocar os dados no campo email")
+	public void colocarOsDadosNoCampoEmail() {
+		metodos.clicar(el.btnCriarConta, "acessando pagina de criar conta de usuario");
+		metodos.escrever(el.nomeCompleto, "teste email invalido", "preenchendo campo nome");
+		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
+		metodos.escrever(el.telefone, "11988888888", "preenchendo campo telefone");
+		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
+		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
 
 	}
 
 	@Quando("as informacoes dos dados forem invalidas")
 	public void asInformacoesDosDadosForemInvalidas() {
+		metodos.escrever(el.emailCriarConta, "testes.com", "preenchendo campo email com dado invalido");
+		metodos.clicar(el.dataNascimento, null);
 
 	}
 
 	@Entao("validamos a mensagem de erro no campo email")
 	public void validamosAMensagemDeErroNoCampoEmail() {
+		metodos.esperar(1000);
+		metodos.validarTexto(el.msgEmailInvalido, "", "validando email invalido");
+		metodos.screenShot("criar_conta_email_invalido");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("preencher o campo telefone")
 	public void preencherOCampoTelefone() {
+		metodos.clicar(el.btnCriarConta, "acessando pagina de criar conta de usuario");
+		metodos.esperar(1000);
+		metodos.escrever(el.nomeCompleto, "teste telefone invalido", "preenchendo campo nome");
+		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
+		metodos.escrever(el.emailCriarConta, "test23iewr@test.com.com", "preenchendo email");
+		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
+		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
 
 	}
 
 	@Quando("os dados estiverem incorretos")
 	public void osDadosEstiveremIncorretos() {
+		metodos.escrever(el.telefone, "119888", "preenchendo campo telefone");
+		metodos.aceitarTermos("aceitando termos");
+		metodos.clicar(el.criarConta, "clicando no botao criar conta");
 
 	}
 
 	@Entao("sistema retorna mensagem de erro no campo")
 	public void sistemaRetornaMensagemDeErroNoCampo() {
+		metodos.encerrarTeste();
 
 	}
 
