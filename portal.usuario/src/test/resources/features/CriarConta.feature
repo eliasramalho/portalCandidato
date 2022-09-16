@@ -1,6 +1,6 @@
 #language: pt
 
-@teste @criarConta
+ @criarConta
 Funcionalidade: Criar Conta
 Como usuario
 Quero criar nova conta
@@ -62,16 +62,15 @@ Quando Clicar no campo de senha
 E Inserir dados sem os oito caraceteres
 Entao sistema retorna uma mensagem
 
-@negativo @criarConta @validarSenha
+@negativo @criarConta @validarSenha 
 Cenario: Prencher cadastro senha sem numeral 
 Quando preenher o campo senha
 E inseir dados que nao contem numeral
 Entao Validamos a mensagem de aviso de retorno do sistema
 
-@negativo @criarConta @validarTermos
+@negativo @criarConta @validarTermos @teste
 Cenario: criar usuario e nao aceitar os termos de uso
 Quando preencher formulario para criar novo usuario
-E inserir o curriculo
 Mas nao aceitar os termos
 Entao botao criar conta nao fica selecionavel
 

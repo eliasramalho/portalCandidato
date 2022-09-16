@@ -158,7 +158,7 @@ public class CriarContaTestes {
 		metodos.esperar(1000);
 		metodos.escrever(el.nomeCompleto, "teste telefone invalido", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "test23iewr@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "test23iemr@test.com.com", "preenchendo email");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
 
@@ -166,7 +166,7 @@ public class CriarContaTestes {
 
 	@Quando("os dados estiverem incorretos")
 	public void osDadosEstiveremIncorretos() {
-		metodos.escrever(el.telefone, "119888", "preenchendo campo telefone");
+		metodos.escrever(el.telefone, "'", "preenchendo campo telefone");
 		metodos.aceitarTermos("aceitando termos");
 		metodos.clicar(el.criarConta, "clicando no botao criar conta");
 
@@ -174,87 +174,137 @@ public class CriarContaTestes {
 
 	@Entao("sistema retorna mensagem de erro no campo")
 	public void sistemaRetornaMensagemDeErroNoCampo() {
+		metodos.esperar(1000);
+		metodos.screenShot("campo_telefone_invalido");
 		metodos.encerrarTeste();
 
 	}
 
 	@Quando("clicar no campo senha")
 	public void clicarNoCampoSenha() {
+		metodos.clicar(el.btnCriarConta, "acessando pagina de criar conta de usuario");
+		metodos.esperar(1000);
+		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
+		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
+		metodos.escrever(el.emailCriarConta, "test2y3ieelamr@test.com.com", "preenchendo email");
 
 	}
 
 	@Quando("preencher dados sem uma letra minuscula")
 	public void preencherDadosSemUmaLetraMinuscula() {
+		metodos.escrever(el.senhaCriarConta, "TESTE123", "preenchendo campo senha");
 
 	}
 
 	@Entao("valido o retorno do sistema")
 	public void validoORetornoDoSistema() {
+		metodos.esperar(3000);
+		metodos.validarTexto(el.msgSenhaMaiuscula, "", "validando a mensagem senha minuscula");
+		metodos.screenShot("criar_conta_senha_minuscula");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("clicar no campo de preencher senha")
 	public void clicarNoCampoDePreencherSenha() {
+		metodos.clicar(el.btnCriarConta, "acessando pagina de criar conta de usuario");
+		metodos.esperar(1000);
+		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
+		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
+		metodos.escrever(el.emailCriarConta, "test267glamr@test.com.com", "preenchendo email");
 
 	}
 
 	@Quando("colocar dados que nao contem letra maiuscula")
 	public void colocarDadosQueNaoContemLetraMaiuscula() {
+		metodos.escrever(el.senhaCriarConta, "teste123", "preenchendo campo senha");
 
 	}
 
 	@Entao("validamos a mensagem do sistema")
 	public void validamosAMensagemDoSistema() {
+		metodos.esperar(3000);
+		metodos.validarTexto(el.msgSenhaMaiuscula, "", "validando a mensagem senha maiuscula");
+		metodos.screenShot("criar_conta_senha_maiuscula");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("Clicar no campo de senha")
 	public void clicarNoCampoDeSenha() {
+		metodos.clicar(el.btnCriarConta, "acessando pagina de criar conta de usuario");
+		metodos.esperar(1000);
+		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
+		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
+		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
+		metodos.escrever(el.emailCriarConta, "teasfr132amr@test.com.com", "preenchendo email");
 
 	}
 
 	@Quando("Inserir dados sem os oito caraceteres")
 	public void inserirDadosSemOsOitoCaraceteres() {
+		metodos.escrever(el.senhaCriarConta, "Test123", "preenchendo campo senha");
 
 	}
 
 	@Entao("sistema retorna uma mensagem")
 	public void sistemaRetornaUmaMensagem() {
+		metodos.esperar(3000);
+		metodos.validarTexto(el.msgSenhaOito, "", "validando a mensagem senha oito caracteres");
+		metodos.screenShot("criar_conta_senha_oito_caracteres");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("preenher o campo senha")
 	public void preenherOCampoSenha() {
+		metodos.clicar(el.btnCriarConta, "acessando pagina de criar conta de usuario");
+		metodos.esperar(1000);
+		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
+		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
+		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
+		metodos.escrever(el.emailCriarConta, "teasfyyy2amr@test.com.com", "preenchendo email");
 
 	}
 
 	@Quando("inseir dados que nao contem numeral")
 	public void inseirDadosQueNaoContemNumeral() {
+		metodos.escrever(el.senhaCriarConta, "TesteTeste", "preenchendo campo senha");
 
 	}
 
 	@Entao("Validamos a mensagem de aviso de retorno do sistema")
 	public void validamosAMensagemDeAvisoDeRetornoDoSistema() {
+		metodos.esperar(3000);
+		metodos.validarTexto(el.msgSenhaNumeral, "", "validando a mensagem senha sem numeral");
+		metodos.screenShot("criar_conta_senha_sem_numeral");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("preencher formulario para criar novo usuario")
 	public void preencherFormularioParaCriarNovoUsuario() {
-
-	}
-
-	@Quando("inserir o curriculo")
-	public void inserirOCurriculo() {
+		metodos.clicar(el.btnCriarConta, "acessando pagina de criar conta de usuario");
+		metodos.esperar(1000);
+		metodos.escrever(el.nomeCompleto, "teste nao aceitar os termos", "preenchendo campo nome");
+		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
+		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
+		metodos.escrever(el.emailCriarConta, "te7sfyddamr@test.com.com", "preenchendo email");
+		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
+		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo confir senha");
 
 	}
 
 	@Quando("nao aceitar os termos")
 	public void naoAceitarOsTermos() {
+		metodos.esperar(1000);
 
 	}
 
 	@Entao("botao criar conta nao fica selecionavel")
 	public void botaoCriarContaNaoFicaSelecionavel() {
+		metodos.screenShot("criar_conta_senha_sem_aceitar_termos");
+		metodos.encerrarTeste();
 
 	}
 

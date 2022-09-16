@@ -16,6 +16,8 @@ import coneccoes.DriversFactory;
 
 public class MetodosDeTestes extends DriversFactory {
 
+	
+
 	public void clicar(By elemento, String descricaoPasso) {
 		try {
 			driver.findElement(elemento).click();
@@ -106,10 +108,22 @@ public class MetodosDeTestes extends DriversFactory {
 		driver.findElement(elemento).submit();
 
 	}
+	public void scrollParaElemento(By elemento,String descricaoPasso) {
+		 try {
+			 JavascriptExecutor js = (JavascriptExecutor) driver;
+			 js.executeScript("arguments[0].scrollIntoView()", elemento);
+		} catch (Exception e) {
+			System.out.println("*******erro no passo**********" + descricaoPasso);
+			System.out.println(e.getCause());
+			System.out.println(e.getMessage());
+		}
+		  
+		}
 
-	public void scroll(int n1, int n2) {
+	public void scroll() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(" + n1 + "," + n2 + ")");
+		js.executeScript("window.scrollBy(0,120)");
+		//js.executeScript("window.scrollBy(" + n1 + "," + n2 + ")");
 	}
 
 	public void login(String descricaoPasso) {
