@@ -9,7 +9,7 @@ Para realizar o cadastro rapido
 Contexto: acessar a tela de cadastro rapido
 Dado que eu esteja na tela de cadastro rapido
 
-@positivo @smoke
+@positivo @smoke 
 Cenario: Realizar o cadastro rapido
 Quando eu preencher os dados corretamente
 E incluir um curriculo

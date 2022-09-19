@@ -68,7 +68,7 @@ Quando preenher o campo senha
 E inseir dados que nao contem numeral
 Entao Validamos a mensagem de aviso de retorno do sistema
 
-@negativo @criarConta @validarTermos @teste
+@negativo @criarConta @validarTermos 
 Cenario: criar usuario e nao aceitar os termos de uso
 Quando preencher formulario para criar novo usuario
 Mas nao aceitar os termos

@@ -48,18 +48,21 @@ public class ElementosWeb {
 		
 		//xpath dos elementos do menu login
 		public By email = By.xpath("//*[@id=\"mat-input-4\"]");
-		
 		public By senha = By.xpath("//*[@id=\"mat-input-5\"]");
 		public By btnFazerLogin = By.xpath("//span[text()='fazer login ']");
-		
+		public By resgatarConta = By.xpath("//*[text()='resgatar conta antiga ']");
+		public By emailResgatarConta = By.xpath("//app-public-recover-account/div/div/form/mat-form-field[1]/div/div[1]/div[3]");
+		public By cpfResgatarConta = By.xpath("//div[@class='mat-form-field-infix ng-tns-c113-22']");
+		public By btnParaResgatarConta = By.xpath("//span[text()='recuperar senha']");
+		public By msgEmailEnviado = By.xpath("//h1[text()='email enviado.']");
+		public By facebook = By.xpath("//span[text()=' Facebook ']");
+		public By google = By.xpath("//*[@class='google-icon']");
 		
 		//perfil do usuario
 		public By campoBuscaHome = By.xpath("//*[@id=\"mat-input-6\"]");
 		public By btnBuscar = By.xpath("//button[@class='mat-focus-indicator perso-button search-button mat-stroked-button mat-button-base mat-primary']");
 		public By texto = By.xpath("//p[text()='é hora de impulsionar o seu talento.']");
 		public By menu = By.xpath("//*[@id=\"profileOptionsButton\"]");
-		
-		//xpath dos elementos do perfil
 		public By meuCurriculo = By.xpath("//a[text()='meu currículo']");
 		public By analista = By.xpath("//h1[text()='Analista de Desenvolvimento Pleno']");
 		public By resultadoBusca = By.xpath("/html/body/div[2]/div/div/app-root/app-private-layout/main/section/app-private-search//div/div[2]/button/span[1]");
@@ -105,6 +108,7 @@ public class ElementosWeb {
 		//public By emailProd = By.xpath("//*[@id=\"mat-input-0\"]");
 		//public By senhaProd = By.xpath("//*[@id=\"mat-input-1\"]");
 		//public By fazerLoginPtod = By.xpath("//span[text()='fazer login ']");
+		
 		
 		//public By btnPerfil = By.xpath("//*[@id=\"profileOptionsButton\"]/img");
 		//public By emailEnviado = By.xpath("//h1[text()='email enviado.']");

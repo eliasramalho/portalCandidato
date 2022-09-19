@@ -27,7 +27,7 @@ Quando preencher os dados do login
 E estiverem incorretos
 Entao sistema informa que email ou senha estao incorretos
 
-@positivo
+@positivo 
 Cenario: Recuperar conta antiga
 Quando clicar no botao recuperar conta antiga
 E Preencher com email valido
@@ -58,7 +58,7 @@ E preencher um email valido
 E clicar no botao de recuperar senha
 Entao o email e enviado com sucesso
 
-@negativo
+@negativo 
 Cenario: Reset de senha com email em branco
 Quando selecionar botao esqueci senha
 E Deixar os campos em branco
@@ -72,7 +72,7 @@ E preencher o email com dados invalidos
 E selecionar botao recuperar senha
 Entao retorna uma mensagem no campo com erro
 
-@positivo
+@positivo 
 Cenario: Realizar login social
 Quando clicar no icone google ou facebook
 E selecionar a conta desejada

@@ -28,7 +28,7 @@ public class Executa extends DriversFactory {
 	public static void IniciarTeste() {
 		String prod = "https://myrandstad.randstad.com.br/#/login";
 		String url = "https://qa-fe-pca.randstad.com.br/#/";
-		String urlEasyApply = "https://qa-fe-pca.randstad.com.br/#/easy-apply?jobPositionId=jp-2027";
+		String urlEasyApply = "https://qa-fe-pca.randstad.com.br/#/easy-apply/jp-2027";
 		String navegador = "Chrome";
 		
 		if (navegador.equalsIgnoreCase("Chrome")) {
@@ -44,7 +44,7 @@ public class Executa extends DriversFactory {
 		}
 		
 		driver.manage().window().maximize();
-		driver.get(url);
+		driver.get(urlEasyApply);
 		
 	}
    
