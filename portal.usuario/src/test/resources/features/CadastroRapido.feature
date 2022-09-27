@@ -1,6 +1,6 @@
 #language: pt
 
-@regressivos @CadastroRapido
+ @CadastroRapido
 Funcionalidade: Realizar cadastro rapido
 Como usuario 
 Quero acessar o site da randstand
@@ -33,7 +33,7 @@ Quando Preencher o campo data de nascimento
 Mas Contem dados invalidos no campo
 Entao O sistema retorna um modal com uma mensagem
 
-@positivo 
+@positivo
 Cenario: Usuario menor de quatorze anos
 Quando preencher os campos com dados corretos
 E preencher idade inferior a quatorze anos
@@ -76,7 +76,7 @@ Quando colocar nos dados nos campos
 E no campo senha faltare a letra aminuscula
 Entao validamos a mesagem de retorno do sistema
 
-@negativo 
+@negativo
 Cenario: Preencher a senha sem conter letra maiuscula
 Quando preencher os campos com dados
 E no campo senha faltar a letra maiuscula

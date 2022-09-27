@@ -1,6 +1,6 @@
 #language: pt
 
- @menuLogin
+@regressivos @menuLogin
 Funcionalidade: Realizar login comum
 Como usuario 
 Quero realizar o login 

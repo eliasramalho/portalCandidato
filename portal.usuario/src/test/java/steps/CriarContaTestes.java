@@ -30,7 +30,7 @@ public class CriarContaTestes {
 	public void preencherFormularioComDadosValidos() {
 		metodos.escrever(el.nomeCompleto, "teste de novo usuario", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "16121986", "preenchendo campo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "test12719tr06@teste.com", "preenchendo campo email");
+		metodos.escrever(el.emailCriarConta, "test12ptr06@teste.com", "preenchendo campo email");
 		metodos.escrever(el.telefone, "11988888888", "preenchendo campo telefone");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
@@ -60,7 +60,7 @@ public class CriarContaTestes {
 
 	@Quando("deixar os campos em branco")
 	public void deixarOsCamposEmBranco() {
-		metodos.clicar(el.btnCriarConta, "acessoando menu criar conta");
+		metodos.clicar(el.btnCriarConta, "acessando menu criar conta");
 		metodos.clicar(el.nomeCompleto, null);
 		metodos.clicar(el.dataNascimento, null);
 		metodos.clicar(el.emailCriarConta, null);
@@ -97,7 +97,7 @@ public class CriarContaTestes {
 	@Quando("preencher os campos com os dados validos")
 	public void preencherOsCamposComOsDadosValidos() {
 		metodos.escrever(el.nomeCompleto, "teste data de nascimento invalida", "preenchendo campo nome");
-		metodos.escrever(el.emailCriarConta, "testy18uiu06@teste.com", "preenchendo campo email");
+		metodos.escrever(el.emailCriarConta, "testy18pu06@teste.com", "preenchendo campo email");
 		metodos.escrever(el.telefone, "11988888888", "preenchendo campo telefone");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
@@ -158,7 +158,7 @@ public class CriarContaTestes {
 		metodos.esperar(1000);
 		metodos.escrever(el.nomeCompleto, "teste telefone invalido", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "test23iemr@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "test23pmr@test.com.com", "preenchendo email");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
 
@@ -186,7 +186,7 @@ public class CriarContaTestes {
 		metodos.esperar(1000);
 		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "test2y3ieelamr@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "test2ypeelamr@test.com.com", "preenchendo email");
 
 	}
 
@@ -211,7 +211,7 @@ public class CriarContaTestes {
 		metodos.esperar(1000);
 		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "test267glamr@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "test2pglamr@test.com.com", "preenchendo email");
 
 	}
 
@@ -237,7 +237,7 @@ public class CriarContaTestes {
 		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
 		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
-		metodos.escrever(el.emailCriarConta, "teasfr132amr@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "teaso32amr@test.com.com", "preenchendo email");
 
 	}
 
@@ -263,7 +263,7 @@ public class CriarContaTestes {
 		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
 		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
-		metodos.escrever(el.emailCriarConta, "teasfyyy2amr@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "t2amr@test.com.com", "preenchendo email");
 
 	}
 
@@ -289,7 +289,7 @@ public class CriarContaTestes {
 		metodos.escrever(el.nomeCompleto, "teste nao aceitar os termos", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
 		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
-		metodos.escrever(el.emailCriarConta, "te7sfyddamr@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "tedamr@test.com.com", "preenchendo email");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo confir senha");
 

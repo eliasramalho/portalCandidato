@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		
 		features = "src/test/resources/features",
 		glue = "steps",
-		tags = "@teste",
+		tags = "@regressivos",
 		monochrome = true,
 		dryRun = false,
 		plugin = {"pretty","html:target/cucumber-report.html"},
@@ -44,7 +44,7 @@ public class Executa extends DriversFactory {
 		}
 		
 		driver.manage().window().maximize();
-		driver.get(urlEasyApply);
+		driver.get(url);
 		
 	}
    
