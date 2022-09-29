@@ -1,6 +1,6 @@
 #language: pt
 
- @CadastroRapido
+  @CadastroRapido
 Funcionalidade: Realizar cadastro rapido
 Como usuario 
 Quero acessar o site da randstand
@@ -16,7 +16,7 @@ E incluir um curriculo
 E aceitar os termos e condicoes
 Entao sistema realiza o cadastro de usuario
 
-@negativo 
+@negativo @teste
 Cenario: Realizar cadastro com campos em branco
 Quando nao preencher os campos 
 Entao o sistema retorna a mensagem de erro

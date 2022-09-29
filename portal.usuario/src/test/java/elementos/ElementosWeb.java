@@ -93,11 +93,15 @@ public class ElementosWeb {
 		
 		
 		//xpath elementos Easy Apply
-		public By nomeEasy = By.xpath("//*[@id=\"mat-input-4\"]");
-		public By dataEasy = By.xpath("//*[@id=\"mat-input-5\"]");
-		public By emailEasy = By.xpath("//*[@id=\"mat-input-6\"]");
-		public By senhaEasy = By.xpath("//*[@id=\"mat-input-7\"]");
-		public By curriculoEasy = By.xpath("//h3[text()=' clique e arraste até aqui ou clique para buscar o arquivo no seu computador. ']");
+		public By nomeEasy = By.id("mat-input-0");
+		public By dataEasy = By.id("mat-input-1");
+		public By emailEasy = By.id("mat-input-2");
+		public By senhaEasy = By.id("mat-input-3");
+		public By curriculoEasy = By.xpath("//div[@class='upload-container']");
+		public By enviarCandidatura = By.xpath("//*[text()=' enviar minha candidatura ']");
+		public By avisoEasy = By.xpath("//*[@id=\"mat-checkbox-2-input\"]");
+		public By msgErroCampoNomeEasy = By.xpath("//*[@id=\"mat-error-0\"]");
+		public By msgErroCampoDataEasy = By.xpath("//*[@id=\"mat-error-1\"]");
 		
 	
 		
