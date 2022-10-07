@@ -1,6 +1,6 @@
 #language: pt
 
- @easyApply
+@regressivos @easyApply
 Funcionalidade: Candidatura Rapida
   Como usuario
   Quero realizar a candidatura rapida
@@ -15,7 +15,7 @@ Dado que eu esteja no menu de cadidatura rapida
     E clicar no botao enviar meu cv
     Entao candidatura enviada com sucesso
 
-@negativo @regressivos
+@negativo 
  Cenario: Candidatura rapida campos em branco
     Quando preencher os dados
     E os campos estiverem em branco
@@ -50,6 +50,49 @@ Dado que eu esteja no menu de cadidatura rapida
     Quando Preencher o formulario com dados
     E no campo senha preencher com senha sem oito caractere
     Entao sistemma retorna mensagem de aviso na senha sem oito caractere
+    
+    @negativo
+    Cenario: Candidatura rapida campo email invalido
+    Quando Prencher os campos do formulario
+    E campo email conter dados invalidos
+    Entao valido a resposta de retorno do sistema
+    
+    @negativo
+    Cenario: Candidatura rapida campo nome invalido
+    Quando escrever nos campos
+    E dados do campo nome forem invalidos
+    Entao valido resposta do sistema no campo nome
+    
+    @positivo
+    Cenario: Candidatura rapida login comum
+    Quando preencher campo email com dados validos
+    E preencher campo senha corretamente
+    E clicar no botao candidatar-se
+    Entao login candiatura realizada com sucesso
+    
+    @negativo
+    Cenario: Candidatura rapida login comum email invalido
+    Quando preencher campo email
+    E os dados forem incorretos
+    Entao valido retorno do sistema
+    
+    @negativo
+    Cenario: Candidatura rapida login comum senha invalida
+    Quando preencher campo senha
+    E os dados nao estiverem corretos
+    Entao valido a mensagem de retorno do sistema 
+    
+    @positivo
+    Cenario: Candidatura rapida login social facebook
+    Quando clicar no botao login com facebook
+    Entao login social realizado com sucesso
+    
+    @positivo
+    Cenario: Candidatura rapida login social google
+    Quando clicar no botao login com google
+    Entao login social com google com sucesso
+    
+    
     
     
     

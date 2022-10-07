@@ -146,4 +146,104 @@ public class EasyApply {
 
 	}
 
+	@Quando("Prencher os campos do formulario")
+	public void prencherOsCamposDoFormulario() {
+
+	}
+
+	@Quando("campo email conter dados invalidos")
+	public void campoEmailConterDadosInvalidos() {
+
+	}
+
+	@Entao("valido a resposta de retorno do sistema")
+	public void validoARespostaDeRetornoDoSistema() {
+
+	}
+
+	@Quando("escrever nos campos")
+	public void escreverNosCampos() {
+
+	}
+
+	@Quando("dados do campo nome forem invalidos")
+	public void dadosDoCampoNomeForemInvalidos() {
+
+	}
+
+	@Entao("valido resposta do sistema no campo nome")
+	public void validoRespostaDoSistemaNoCampoNome() {
+
+	}
+
+	@Quando("preencher campo email com dados validos")
+	public void preencherCampoEmailComDadosValidos() {
+
+	}
+
+	@Quando("preencher campo senha corretamente")
+	public void preencherCampoSenhaCorretamente() {
+
+	}
+
+	@Quando("clicar no botao candidatar-se")
+	public void clicarNoBotaoCandidatarSe() {
+
+	}
+
+	@Entao("login candiatura realizada com sucesso")
+	public void loginCandiaturaRealizadaComSucesso() {
+
+	}
+
+	@Quando("preencher campo email")
+	public void preencherCampoEmail() {
+
+	}
+
+	@Quando("os dados forem incorretos")
+	public void osDadosForemIncorretos() {
+
+	}
+
+	@Entao("valido retorno do sistema")
+	public void validoRetornoDoSistema() {
+
+	}
+
+	@Quando("preencher campo senha")
+	public void preencherCampoSenha() {
+
+	}
+
+	@Quando("os dados nao estiverem corretos")
+	public void osDadosNaoEstiveremCorretos() {
+
+	}
+
+	@Entao("valido a mensagem de retorno do sistema")
+	public void validoAMensagemDeRetornoDoSistema() {
+
+	}
+
+	@Quando("clicar no botao login com facebook")
+	public void clicarNoBotaoLoginComFacebook() {
+
+	}
+
+	@Entao("login social realizado com sucesso")
+	public void loginSocialRealizadoComSucesso() {
+
+	}
+
+	@Quando("clicar no botao login com google")
+	public void clicarNoBotaoLoginComGoogle() {
+
+	}
+
+	@Entao("login social com google com sucesso")
+	public void loginSocialComGoogleComSucesso() {
+
+	}
+
 }
