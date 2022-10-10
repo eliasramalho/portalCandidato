@@ -100,8 +100,16 @@ public class ElementosWeb {
 		public By curriculoEasy = By.xpath("//div[@class='upload-container']");
 		public By enviarCandidatura = By.xpath("//*[text()=' enviar minha candidatura ']");
 		public By avisoEasy = By.xpath("//*[@id=\"mat-checkbox-2-input\"]");
-		public By msgErroCampoNomeEasy = By.xpath("//*[@id=\"mat-error-0\"]");
+		public By msgErroCampoNomeEasy = By.xpath("//*[text()=' Por favor, preencha o campo Nome Completo ']");
 		public By msgErroCampoDataEasy = By.xpath("//*[@id=\"mat-error-1\"]");
+		public By verSenhaEasy = By.xpath("//img[@class='eye-icon ng-tns-c113-3']");
+		public By msgErroSenhaOito = By.xpath("//*/div/div/main/div[1]/div/form[1]/div[4]/p[1]");
+		public By msgErroSenhaMinusclua = By.xpath("//*/div/div/main/div[1]/div/form[1]/div[4]/p[2]");
+		public By msgErroSenhaMaiuscula = By.xpath("//*/div/div/main/div[1]/div/form[1]/div[4]/p[3]");
+		public By msgErroSenhaNumeral = By.xpath("//*/div/div/main/div[1]/div/form[1]/div[4]/p[4]");
+		public By msgErroEmailEasy = By.xpath("//*[@id=\"mat-error-6\"]/span");
+		public By btnCandidatarEasy = By.xpath("//span[text()=' candidatar-se ']");
+		
 		
 	
 		

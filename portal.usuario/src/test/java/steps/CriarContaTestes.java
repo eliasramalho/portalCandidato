@@ -30,7 +30,7 @@ public class CriarContaTestes {
 	public void preencherFormularioComDadosValidos() {
 		metodos.escrever(el.nomeCompleto, "teste de novo usuario", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "16121986", "preenchendo campo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "test12ptr06@teste.com", "preenchendo campo email");
+		metodos.escrever(el.emailCriarConta, "fidehih63@migonom.com", "preenchendo campo email");
 		metodos.escrever(el.telefone, "11988888888", "preenchendo campo telefone");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");

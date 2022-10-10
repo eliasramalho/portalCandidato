@@ -73,121 +73,196 @@ public class EasyApply {
 
 	@Quando("preencher os campos do formulario")
 	public void preencherOsCamposDoFormulario() {
+		metodos.escrever(el.nomeEasy, "Teste nascimento invalido", "escrevendo nome");
+		
+		
 
 	}
 
 	@Quando("data de nascimento estiver invalida")
 	public void dataDeNascimentoEstiverInvalida() {
+		metodos.escrever(el.dataEasy, "01011048", "preenchendo nascimento");
 
 	}
 
 	@Entao("sistema retorna um modal com mensagem de aviso")
 	public void sistemaRetornaUmModalComMensagemDeAviso() {
+		metodos.esperar(2000);
+		metodos.screenShot("nascimento_invalido_easy_apply");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("preencher formulario")
 	public void preencherFormulario() {
+		metodos.escrever(el.nomeEasy, "Senha sem numeral", "escrevendo nome");
+		metodos.escrever(el.dataEasy, "01012000", "preenchendo nascimento");
+		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
+		metodos.uploadArquivo("anexando curriculo");
+		metodos.esperar(1000);
+		metodos.escrever(el.emailEasy, "nibocm2@deitada.com", "preenchendo campo email");
+		
 
 	}
 
 	@Quando("no campo senha preencher com senha sem numeral")
 	public void noCampoSenhaPreencherComSenhaSemNumeral() {
+		metodos.escrever(el.senhaEasy, "Testeteste", "preenchendo campo senha sem numeral");
+		metodos.clicar(el.verSenhaEasy, "visualizar senha");
 
 	}
 
 	@Entao("sistemma retorna mensagem de aviso sem numeral")
 	public void sistemmaRetornaMensagemDeAvisoSemNumeral() {
+		metodos.esperar(1000);
+		metodos.validarTexto(el.msgErroSenhaNumeral, "1 número", "validando msg de erro sem numeral");
+		metodos.screenShot("senha_sem_numeral_easy_apply");
+		metodos.encerrarTeste();
+		
 
 	}
 
 	@Quando("Preencher o formulario")
 	public void preencherOFormulario() {
+		metodos.escrever(el.nomeEasy, "Senha sem maiuscula", "escrevendo nome");
+		metodos.escrever(el.dataEasy, "01012000", "preenchendo nascimento");
+		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
+		metodos.uploadArquivo("anexando curriculo");
+		metodos.esperar(1000);
 
 	}
 
 	@Quando("no campo senha preencher com senha sem maiuscula")
 	public void noCampoSenhaPreencherComSenhaSemMaiuscula() {
+		metodos.escrever(el.senhaEasy, "teste1234", "preenchendo campo senha sem maiuscula");
+		metodos.clicar(el.verSenhaEasy, "visualizar senha");
 
 	}
 
 	@Entao("sistemma retorna mensagem de aviso na senha sem maiuscula")
 	public void sistemmaRetornaMensagemDeAvisoNaSenhaSemMaiuscula() {
+		metodos.esperar(1000);
+		metodos.validarTexto(el.msgErroSenhaMaiuscula, "1 letra maíuscula", "validando msg de erro sem maiuscula");
+		metodos.screenShot("senha_sem_maiuscula_easy_apply");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("Preencher campos")
 	public void preencherCampos() {
+		metodos.escrever(el.nomeEasy, "Senha sem minuscula", "escrevendo nome");
+		metodos.escrever(el.dataEasy, "01012000", "preenchendo nascimento");
+		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
+		metodos.uploadArquivo("anexando curriculo");
+		metodos.esperar(1000);
 
 	}
 
 	@Quando("no campo senha preencher com senha sem minuscula")
 	public void noCampoSenhaPreencherComSenhaSemMinuscula() {
+		metodos.escrever(el.senhaEasy, "TESTE1234", "preenchendo campo senha sem minuscula");
+		metodos.clicar(el.verSenhaEasy, "visualizar senha");
 
 	}
 
 	@Entao("sistemma retorna mensagem de aviso na senha sem minuscula")
 	public void sistemmaRetornaMensagemDeAvisoNaSenhaSemMinuscula() {
+		metodos.esperar(1000);
+		metodos.validarTexto(el.msgErroSenhaMinusclua, "1 letra minúscula", "validando msg de erro sem minuscula");
+		metodos.screenShot("senha_sem_minuscula_easy_apply");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("Preencher o formulario com dados")
 	public void preencherOFormularioComDados() {
+		metodos.escrever(el.nomeEasy, "Senha sem oito caracteres", "escrevendo nome");
+		metodos.escrever(el.dataEasy, "01012000", "preenchendo nascimento");
+		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
+		metodos.uploadArquivo("anexando curriculo");
+		metodos.esperar(1000);
 
 	}
 
 	@Quando("no campo senha preencher com senha sem oito caractere")
 	public void noCampoSenhaPreencherComSenhaSemOitoCaractere() {
+		metodos.escrever(el.senhaEasy, "Teste12", "preenchendo campo senha sem oito caracteres");
+		metodos.clicar(el.verSenhaEasy, "visualizar senha");
 
 	}
 
 	@Entao("sistemma retorna mensagem de aviso na senha sem oito caractere")
 	public void sistemmaRetornaMensagemDeAvisoNaSenhaSemOitoCaractere() {
+		metodos.esperar(1000);
+		metodos.validarTexto(el.msgErroSenhaOito, "8 caracteres", "validando msg de erro sem oito caracteres");
+		metodos.screenShot("senha_sem_oito_caracteres_easy_apply");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("Prencher os campos do formulario")
 	public void prencherOsCamposDoFormulario() {
+		metodos.escrever(el.nomeEasy, "Campo email invalido", "escrevendo nome");
+		metodos.escrever(el.dataEasy, "01012000", "preenchendo nascimento");
+		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
+		metodos.uploadArquivo("anexando curriculo");
+		metodos.esperar(1000);
 
 	}
 
 	@Quando("campo email conter dados invalidos")
 	public void campoEmailConterDadosInvalidos() {
+		metodos.escrever(el.emailEasy, "teste.com.br", "escrevendo email invalido");
+		metodos.clicar(el.senhaEasy, null);
 
 	}
 
 	@Entao("valido a resposta de retorno do sistema")
 	public void validoARespostaDeRetornoDoSistema() {
+		metodos.esperar(1000);
+		metodos.validarTexto(el.msgErroEmailEasy, "Por favor, forneça um formato de Email válido", "validando msg de erro no email");
+		metodos.screenShot("teste_email_invalido_easy");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("escrever nos campos")
 	public void escreverNosCampos() {
+		metodos.escrever(el.dataEasy, "01012000", null);
 
 	}
 
 	@Quando("dados do campo nome forem invalidos")
 	public void dadosDoCampoNomeForemInvalidos() {
+		metodos.escrever(el.nomeEasy, "1E", "escrevendo nome invalido");
+		metodos.clicar(el.dataEasy, null);
 
 	}
 
 	@Entao("valido resposta do sistema no campo nome")
 	public void validoRespostaDoSistemaNoCampoNome() {
+		metodos.esperar(1000);
+		metodos.validarTexto(el.msgErroCampoNomeEasy, "", "validando msg erro nome invalido");
+		metodos.screenShot("nome_invalido_easy");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("preencher campo email com dados validos")
 	public void preencherCampoEmailComDadosValidos() {
+		metodos.escrever(el.emailEasy, "usuarioteste41@yahoo.com", "preenchendo email corretamente");
 
 	}
 
 	@Quando("preencher campo senha corretamente")
 	public void preencherCampoSenhaCorretamente() {
+		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo senha corretamente");
 
 	}
 
 	@Quando("clicar no botao candidatar-se")
 	public void clicarNoBotaoCandidatarSe() {
+		metodos.clicar(el.btnCandidatarEasy, "clicando no botao candidatar se");
 
 	}
 
