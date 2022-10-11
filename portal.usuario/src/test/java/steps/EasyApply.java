@@ -25,7 +25,7 @@ public class EasyApply {
 		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
-		metodos.escrever(el.emailEasy, "nibocam2@deitada.com", "preenchendo campo email");
+		metodos.escrever(el.emailEasy, "negop42450@inkmoto.com", "preenchendo campo email");
 		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo campo senha");
 		metodos.clicar(el.termoUso, "clicando nos termos");
 		metodos.esperar(1000);
@@ -250,74 +250,103 @@ public class EasyApply {
 
 	@Quando("preencher campo email com dados validos")
 	public void preencherCampoEmailComDadosValidos() {
-		metodos.escrever(el.emailEasy, "usuarioteste41@yahoo.com", "preenchendo email corretamente");
+		metodos.escrever(el.emailEasy1, "usuarioteste41@yahoo.com", "preenchendo email corretamente");
 
 	}
 
 	@Quando("preencher campo senha corretamente")
 	public void preencherCampoSenhaCorretamente() {
-		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo senha corretamente");
+		metodos.escrever(el.senhaEasy2, "Teste123", "preenchendo senha corretamente");
 
 	}
 
 	@Quando("clicar no botao candidatar-se")
 	public void clicarNoBotaoCandidatarSe() {
 		metodos.clicar(el.btnCandidatarEasy, "clicando no botao candidatar se");
+		metodos.esperar(2000);
+		
 
 	}
 
 	@Entao("login candiatura realizada com sucesso")
 	public void loginCandiaturaRealizadaComSucesso() {
+		metodos.validarTexto(el.textoCandidaturaEfetuada, "candidatura efetuada.", "validando msg candidatura efetuada");
+		metodos.screenShot("candidatura_com_sucesso");
+		metodos.esperar(1000);
+		metodos.encerrarTeste();
+		
 
 	}
 
 	@Quando("preencher campo email")
 	public void preencherCampoEmail() {
+		metodos.escrever(el.emailEasy1, "teste.com.br", "preenchendo email invalido");
 
 	}
 
 	@Quando("os dados forem incorretos")
 	public void osDadosForemIncorretos() {
+		metodos.escrever(el.senhaEasy2, "Teste123", "escrevendo senha");
 
 	}
 
 	@Entao("valido retorno do sistema")
 	public void validoRetornoDoSistema() {
+		metodos.esperar(2000);
+		metodos.validarTexto(el.msgErroEmailEasy1, "", "validando msg erro email invalido");
+		metodos.screenShot("email_invalido_easy");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("preencher campo senha")
 	public void preencherCampoSenha() {
+		metodos.escrever(el.msgErroEmailEasy1, "widor51675@migonom.com", "escrevendo email");
+		metodos.esperar(1000);
 
 	}
 
 	@Quando("os dados nao estiverem corretos")
 	public void osDadosNaoEstiveremCorretos() {
+		metodos.escrever(el.senhaEasy2, "Teste122345", "escrevendo senha invalida");
+		metodos.esperar(1000);
+		metodos.clicar(el.btnCandidatarEasy, null);
 
 	}
 
 	@Entao("valido a mensagem de retorno do sistema")
 	public void validoAMensagemDeRetornoDoSistema() {
+		metodos.esperar(1000);
+		metodos.screenShot("msg_email_ou_senha_invalidos");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("clicar no botao login com facebook")
 	public void clicarNoBotaoLoginComFacebook() {
+		metodos.clicar(el.facebookEasy, "login social faceboook");
+		metodos.esperar(4000);
 
 	}
 
 	@Entao("login social realizado com sucesso")
 	public void loginSocialRealizadoComSucesso() {
+		metodos.screenShot("login_social_facebook");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("clicar no botao login com google")
 	public void clicarNoBotaoLoginComGoogle() {
+		metodos.clicar(el.googleEasy, "login social google");
+		metodos.esperar(4000);
 
 	}
 
 	@Entao("login social com google com sucesso")
 	public void loginSocialComGoogleComSucesso() {
+		metodos.screenShot("login_social_google");
+		metodos.encerrarTeste();
 
 	}
 

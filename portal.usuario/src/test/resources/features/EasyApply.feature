@@ -63,31 +63,31 @@ Dado que eu esteja no menu de cadidatura rapida
     E dados do campo nome forem invalidos
     Entao valido resposta do sistema no campo nome
     
-    @positivo @regressivos
+    @positivo 
     Cenario: Candidatura rapida login comum
     Quando preencher campo email com dados validos
     E preencher campo senha corretamente
     E clicar no botao candidatar-se
     Entao login candiatura realizada com sucesso
     
-    @negativo
+    @negativo 
     Cenario: Candidatura rapida login comum email invalido
     Quando preencher campo email
     E os dados forem incorretos
     Entao valido retorno do sistema
     
-    @negativo
+    @negativo 
     Cenario: Candidatura rapida login comum senha invalida
     Quando preencher campo senha
     E os dados nao estiverem corretos
     Entao valido a mensagem de retorno do sistema 
     
-    @positivo
+    @positivo 
     Cenario: Candidatura rapida login social facebook
     Quando clicar no botao login com facebook
     Entao login social realizado com sucesso
     
-    @positivo
+    @positivo @regressivos
     Cenario: Candidatura rapida login social google
     Quando clicar no botao login com google
     Entao login social com google com sucesso
