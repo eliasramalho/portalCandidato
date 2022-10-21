@@ -29,7 +29,6 @@ Cenario: Preencher o cadastro com data de nascimento invalida
 Quando for criar a conta
 E preencher os campos com os dados validos
 E campo idade for preenchido com dado invalido
-E clicar no botao de criar conta
 Entao validamos mensagem de sucesso do sistema
 
 @negativo @criarConta 
@@ -44,31 +43,31 @@ Quando preencher o campo telefone
 E os dados estiverem incorretos
 Entao sistema retorna mensagem de erro no campo
 
-@negativo @criarConta @validarSenha
+@negativo @criarConta @validarSenha 
 Cenario: Prencher formulario senha sem letra minuscula
 Quando clicar no campo senha
 E preencher dados sem uma letra minuscula
 Entao valido o retorno do sistema
 
-@negativo @criarConta @validarSenha
+@negativo @criarConta @validarSenha 
 Cenario: Prencher cadastro senha sem letra maiuscula
 Quando clicar no campo de preencher senha
 E colocar dados que nao contem letra maiuscula
 Entao validamos a mensagem do sistema 
 
-@negativo @criarConta @validarSenha
+@negativo @criarConta @validarSenha 
 Cenario: Prencher cadastro senha sem oito caracteres
 Quando Clicar no campo de senha
 E Inserir dados sem os oito caraceteres
 Entao sistema retorna uma mensagem
 
-@negativo @criarConta @validarSenha 
+@negativo @criarConta @validarSenha  
 Cenario: Prencher cadastro senha sem numeral 
 Quando preenher o campo senha
 E inseir dados que nao contem numeral
 Entao Validamos a mensagem de aviso de retorno do sistema
 
-@negativo @criarConta @validarTermos 
+@negativo @criarConta @validarTermos @regressivos
 Cenario: criar usuario e nao aceitar os termos de uso
 Quando preencher formulario para criar novo usuario
 Mas nao aceitar os termos

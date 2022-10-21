@@ -87,7 +87,7 @@ Dado que eu esteja no menu de cadidatura rapida
     Quando clicar no botao login com facebook
     Entao login social realizado com sucesso
     
-    @positivo @regressivos
+    @positivo 
     Cenario: Candidatura rapida login social google
     Quando clicar no botao login com google
     Entao login social com google com sucesso

@@ -1,7 +1,5 @@
 package steps;
 
-import java.io.IOException;
-
 import elementos.ElementosWeb;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
@@ -24,33 +22,32 @@ public class CadastroRapidoTestes {
 	public void euPreencherOsDadosCorretamente() {
 		metodos.escrever(el.cRnomeCompleto, "teste cadastro rapido", "escrendo nome");
 		metodos.escrever(el.cRnascimento, "16121986", "escrevendo data de nascimento");
-		metodos.escrever(el.cRemail, "tan8aka7o9itd6@moenode.com", "preenchendo o email");
+		metodos.escrever(el.cRemail, "tan9t65@monode.com", "preenchendo o email");
 		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
 
 	}
 
 	@Quando("incluir um curriculo")
-	public void incluirUmCurriculo() throws InterruptedException {
-		metodos.clicar(el.cRCurriculo, "clicando no upload de curriculo");
-		metodos.esperar(1000);
-		metodos.uploadArquivo("anexando curriculo");
+	public void incluirUmCurriculo() {
+		metodos.anexarCurriculo("anexando um curriculo");
 
 	}
 
 	@Quando("aceitar os termos e condicoes")
-	public void aceitarOsTermosECondicoes() throws InterruptedException {
+	public void aceitarOsTermosECondicoes() {
 		metodos.clicar(el.cRtermos, "aceitando termos");
 		metodos.esperar(2000);
 		metodos.clicar(el.cREntendi, "clicando em entendi");
 		metodos.clicar(el.cRaviso, "aceitando aviso de privacidade");
 		metodos.clicar(el.cRSalvarCadastro, "enviando curriculo");
-		metodos.esperar(5000);
+		metodos.esperar(9000);
 
 	}
 
 	@Entao("sistema realiza o cadastro de usuario")
-	public void sistemaRealizaOCadastroDeUsuario() throws IOException {
-		metodos.validarTexto(el.btnLeveParaLogin, "", "validando a mensagem de sucesso");
+	public void sistemaRealizaOCadastroDeUsuario() {
+		metodos.validarTexto(el.msgSucessoCriarConta, "Confirme sua conta no seu e-mail",
+				"validando a mensagem de sucesso");
 		metodos.screenShot("cadastro_rapido_sucesso");
 		metodos.esperar(3000);
 		metodos.encerrarTeste();
@@ -59,7 +56,6 @@ public class CadastroRapidoTestes {
 
 	@Quando("nao preencher os campos")
 	public void naoPreencherOsCampos() {
-		metodos.clicar(el.cookies, "aceitando os cookies");
 		metodos.clicar(el.cRnomeCompleto, "clicando no campo");
 		metodos.clicar(el.cRsenha, "clicando no campo");
 		metodos.clicar(el.cRemail, "clicando no campo");
@@ -67,8 +63,9 @@ public class CadastroRapidoTestes {
 	}
 
 	@Entao("o sistema retorna a mensagem de erro")
-	public void oSistemaRetornaAMensagemDeErro() throws IOException, InterruptedException {
-		metodos.esperar(1000);
+	public void oSistemaRetornaAMensagemDeErro() {
+		metodos.esperar(2000);
+		metodos.validarTexto(el.msgErroNomeBranco, "", "validando nome em branco");
 		metodos.screenShot("Cadastro_Rapido_em_branco");
 		metodos.encerrarTeste();
 
@@ -76,39 +73,46 @@ public class CadastroRapidoTestes {
 
 	@Quando("preencher o campo email")
 	public void preencherOCampoEmail() {
-		metodos.clicar(el.cookies, "aceitando os cookies");
+		metodos.escrever(el.cRnomeCompleto, "teste email invalido", "preenchendo campo nome");
+		metodos.escrever(el.cRemail, "test.com", "preenchendo o campo email");
 
 	}
 
 	@Quando("os dados forem invalidos")
 	public void osDadosForemInvalidos() {
-		metodos.escrever(el.cRemail, "test.com", "preenchendo o campo email");
 		metodos.clicar(el.cRsenha, "clicando no campo");
 
 	}
 
 	@Entao("o sistema retorna uma mensagem")
-	public void oSistemaRetornaUmaMensagem() throws InterruptedException, IOException {
+	public void oSistemaRetornaUmaMensagem() {
 		metodos.esperar(2000);
+		metodos.validarTexto(el.msgErroEmail, "Por favor, forneça um formato de Email válido",
+				"validando msg de erro no email");
 		metodos.screenShot("email_dados_invalidos");
 		metodos.encerrarTeste();
 	}
 
 	@Quando("Preencher o campo data de nascimento")
 	public void preencherOCampoDataDeNascimento() {
-		metodos.clicar(el.cookies, "aceitando os cookies");
+		metodos.escrever(el.cRnomeCompleto, "teste nascimento invalido", "preenhcendo nome");
+		metodos.escrever(el.cRemail, "tan65@mnode.com", "preenchendo o email");
+		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
+		metodos.anexarCurriculo("anexando um curriculo");
+		metodos.aceitarTermos("acetando termos e condicoes");
+		metodos.escrever(el.cRnascimento, "01012015", "preenchendo data com dados invalidos");
 
 	}
 
 	@Quando("Contem dados invalidos no campo")
 	public void contemDadosInvalidosNoCampo() {
-		metodos.escrever(el.cRnascimento, "00002999", "preenchendo data com dados invalidos");
 
 	}
 
 	@Entao("O sistema retorna um modal com uma mensagem")
-	public void oSistemaRetornaUmModalComUmaMensagem() throws IOException, InterruptedException {
-		metodos.esperar(2000);
+	public void oSistemaRetornaUmModalComUmaMensagem() {
+		metodos.esperar(3000);
+		metodos.validarTexto(el.idadeNaoPermitida, "Idade não permitida", "validando msg idade n permitida");
 		metodos.screenShot("idade_nao_permitida");
 		metodos.encerrarTeste();
 
@@ -117,19 +121,21 @@ public class CadastroRapidoTestes {
 	@Quando("preencher os campos com dados corretos")
 	public void preencherOsCamposComDadosCorretos() {
 		metodos.escrever(el.cRnomeCompleto, "Usuario com menos de quatorze anos", "preenchendo nome");
+		metodos.escrever(el.cRemail, "tan8td@moenode.com", "preenchendo o email");
+		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
 
 	}
 
 	@Quando("preencher idade inferior a quatorze anos")
 	public void preencherIdadeInferiorAQuatorzeAnos() {
-		metodos.escrever(el.cRnascimento, "16122015", "preenchendo data de nascimento");
+		metodos.escrever(el.cRnascimento, "16122017", "preenchendo data de nascimento");
 		metodos.esperar(2000);
 
 	}
 
 	@Entao("o sistema retorna uma modal")
 	public void oSistemaRetornaUmaModal() {
-		metodos.validarTexto(el.nomeResponsavel, "", "validando o modal de retorno");
+		metodos.validarTexto(el.idadeNaoPermitida, "Idade não permitida", "validando o modal de retorno");
 		metodos.screenShot("usuario_menor_de_quatorze");
 		metodos.encerrarTeste();
 
@@ -137,48 +143,60 @@ public class CadastroRapidoTestes {
 
 	@Quando("preencher os dados do formulario corretamente")
 	public void preencherOsDadosDoFormularioCorretamente() {
-		metodos.escrever(el.cRnascimento, "16122015", "escrevendo data de nascimento");
+		metodos.escrever(el.cRnomeCompleto, "usuario menor de idade", "escrendo nome");
+		metodos.escrever(el.cRnascimento, "01012008", "preenchendo idade");
+		metodos.escrever(el.cRemail, "t1a46@mode.com", "preenchendo o email");
+		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
+		metodos.anexarCurriculo("anexando curriculo");
+		metodos.clicar(el.cRtermos, "aceitando termos");
 		metodos.esperar(1000);
-		metodos.escrever(el.nomeResponsavel, "Tutor do Usuario Teste", "preenchendo nome do responsavel");
-		metodos.escrever(el.emailResponsavel, "teoyrxc243@teste.com", "preenchendo email do responsavel");
+		metodos.clicar(el.cREntendi, "clicando em entendi");
 		metodos.esperar(1000);
-		metodos.clicar(el.btnProsseguir, "clicando no botao prosseguir");
-		metodos.esperar(1000);
+		metodos.clicar(el.cRaviso, "aceitando aviso de privacidade");
+		metodos.clicar(el.cRSalvarCadastro, "enviando cadastro");
 
 	}
 
 	@Quando("preencher modal de validacao de usuaario")
 	public void preencherModalDeValidacaoDeUsuaario() {
-		metodos.escrever(el.cRnomeCompleto, "teste cadastro rapido", "escrendo nome");
-		metodos.escrever(el.cRemail, "tautz65446@moenode.com", "preenchendo o email");
-		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
-		metodos.clicar(el.cRCurriculo, "clicando no upload de curriculo");
-		metodos.esperar(1000);
-		metodos.uploadArquivo("anexando curriculo");
-		metodos.clicar(el.cRtermos, "aceitando termos");
+		metodos.esperar(3000);
+		metodos.escrever(el.nomeResponsavel, "teste responsavel", "nome do responsdavel");
+		metodos.escrever(el.emailResponsavel, "dufiw@gmail.com", "email do responsavel");
+		metodos.esperar(3000);
+		metodos.clicar(el.btnProsseguir, "prosseguindo");
 		metodos.esperar(2000);
-		metodos.clicar(el.cREntendi, "clicando em entendi");
-		metodos.esperar(1000);
-		metodos.clicar(el.cRaviso, "aceitando aviso de privacidade");
+
 	}
 
 	@Entao("usuario de menor cadastrado com sucesso")
 	public void usuarioDeMenorCadastradoComSucesso() {
-		metodos.clicar(el.cRSalvarCadastro, "clicando no bota salvar cadastro");
+		metodos.validarTexto(el.msgSucessoCriarConta, "Confirme sua conta no seu e-mail", "validando msg de sucesso");
 		metodos.screenShot("sucesso_usuario_menor_quatorze");
 		metodos.encerrarTeste();
-		
 
 	}
 
 	@Quando("preencher a idade do usuario menor que quatorze anos")
 	public void preencherAIdadeDoUsuarioMenorQueQuatorzeAnos() {
-		metodos.escrever(el.cRnascimento, "16122015", "preenchendo campo data de nascimento");
+		metodos.escrever(el.cRnomeCompleto, "usuario menoir de idade", "escrendo nome");
+		metodos.escrever(el.cRnascimento, "01012008", "preenchendo idade");
+		metodos.escrever(el.cRemail, "ta4ki@meode.com", "preenchendo o email");
+		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
+		metodos.anexarCurriculo("anexando curriculo");
+		metodos.clicar(el.cRtermos, "aceitando termos");
+		metodos.esperar(1000);
+		metodos.clicar(el.cREntendi, "clicando em entendi");
+		metodos.esperar(1000);
+		metodos.clicar(el.cRaviso, "aceitando aviso de privacidade");
+		metodos.clicar(el.cRSalvarCadastro, "enviando cadastro");
+		metodos.esperar(2000);
 
 	}
 
 	@Quando("deixar os campos do modal em branco")
 	public void deixarOsCamposDoModalEmBranco() {
+		metodos.clicar(el.nomeResponsavel, "clicando para mostrar o erro");
+		metodos.clicar(el.emailResponsavel, "clicando para mostrar o erro");
 		metodos.clicar(el.nomeResponsavel, "clicando para mostrar o erro");
 		metodos.esperar(2000);
 
@@ -186,16 +204,25 @@ public class CadastroRapidoTestes {
 
 	@Entao("validamos o retorno do sistema nos campos com erro")
 	public void validamosORetornoDoSistemaNosCamposComErro() {
-		metodos.validarTexto(el.btnProsseguir, "", "clicando no botao prosseguir");
 		metodos.screenShot("modal_campo_em_branco");
 		metodos.encerrarTeste();
-		
 
 	}
 
 	@Quando("acessar o modal")
 	public void acessarOModal() {
-		metodos.escrever(el.cRnascimento, "16122015", "acessando modal de validacao");
+		metodos.escrever(el.cRnomeCompleto, "menor de idade nome validacao nome em branco", "escrendo nome");
+		metodos.escrever(el.cRnascimento, "01012008", "preenchendo idade");
+		metodos.escrever(el.cRemail, "t4ki@meode.com", "preenchendo o email");
+		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
+		metodos.anexarCurriculo("anexando curriculo");
+		metodos.clicar(el.cRtermos, "aceitando termos");
+		metodos.esperar(1000);
+		metodos.clicar(el.cREntendi, "clicando em entendi");
+		metodos.esperar(1000);
+		metodos.clicar(el.cRaviso, "aceitando aviso de privacidade");
+		metodos.clicar(el.cRSalvarCadastro, "enviando cadastro");
+		metodos.esperar(2000);
 
 	}
 
@@ -211,17 +238,26 @@ public class CadastroRapidoTestes {
 
 	@Entao("sistema informa erro nos campos")
 	public void sistemaInformaErroNosCampos() {
-		metodos.validarTexto(el.msgErroNome, "", "validando a msg de erro do sistema");
+		metodos.validarTexto(el.msgErroNome, "Nome do Responsável", "validacao msg erro nome");
 		metodos.screenShot("modal_nome_invalido");
 		metodos.encerrarTeste();
-
-		
 
 	}
 
 	@Quando("acessar o modal de validacao")
 	public void acessarOModalDeValidacao() {
-		metodos.escrever(el.cRnascimento, "16122015", "acessando modal de validacao");
+		metodos.escrever(el.cRnomeCompleto, "menor de idade email invalido", "escrendo nome");
+		metodos.escrever(el.cRnascimento, "01012008", "preenchendo idade");
+		metodos.escrever(el.cRemail, "t4k45i@meode.com", "preenchendo o email");
+		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
+		metodos.anexarCurriculo("anexando curriculo");
+		metodos.clicar(el.cRtermos, "aceitando termos");
+		metodos.esperar(1000);
+		metodos.clicar(el.cREntendi, "clicando em entendi");
+		metodos.esperar(1000);
+		metodos.clicar(el.cRaviso, "aceitando aviso de privacidade");
+		metodos.clicar(el.cRSalvarCadastro, "enviando cadastro");
+		metodos.esperar(2000);
 
 	}
 
@@ -236,7 +272,8 @@ public class CadastroRapidoTestes {
 
 	@Entao("validamos se o sistema informa erro nos campos")
 	public void validamosSeOSistemaInformaErroNosCampos() {
-		metodos.validarTexto(el.msgErroEmail, "", "validando msg de erro no email");
+		metodos.validarTexto(el.msgErroEmail, "Por favor, forneça um formato de Email válido",
+				"validando msg de erro no email");
 		metodos.screenShot("modal_email_invalido");
 		metodos.encerrarTeste();
 
@@ -246,8 +283,7 @@ public class CadastroRapidoTestes {
 	public void preencherOsCampos() {
 		metodos.escrever(el.cRnomeCompleto, "teste senha sem numeral", "escrevendo nome");
 		metodos.escrever(el.cRnascimento, "16121986", "escrevendo data de nascimento");
-		metodos.escrever(el.cRemail, "tanaliyc6pp496@mirnode.com", "preenchendo o email");
-		
+		metodos.escrever(el.cRemail, "taal6pp496@mirnode.com", "preenchendo o email");
 
 	}
 
@@ -260,10 +296,9 @@ public class CadastroRapidoTestes {
 
 	@Entao("o sistema retorna uma mensagem de aviso")
 	public void oSistemaRetornaUmaMensagemDeAviso() {
-		metodos.validarTexto(el.msgSenhaNumeral, "", "validando senha sem numeral");
+		metodos.validarTexto(el.msgSenhaNumeral, "Pelo menos um Número ou Símbolo", "validando senha sem numeral");
 		metodos.screenShot("senha_sem_numeral");
 		metodos.encerrarTeste();
-		
 
 	}
 
@@ -271,21 +306,20 @@ public class CadastroRapidoTestes {
 	public void colocarNosDadosNosCampos() {
 		metodos.escrever(el.cRnomeCompleto, "teste senha sem numeral", "escrevendo nome");
 		metodos.escrever(el.cRnascimento, "16121986", "escrevendo data de nascimento");
-		metodos.escrever(el.cRemail, "t8nakjh58@mirnode.com", "preenchendo o email");
-		
+		metodos.escrever(el.cRemail, "t8n58@minode.com", "preenchendo o email");
 
 	}
 
 	@Quando("no campo senha faltare a letra aminuscula")
 	public void noCampoSenhaFaltareALetraAminuscula() {
 		metodos.escrever(el.cRsenha, "TESTE1234", "preenchendo a senha minuscula");
-		metodos.esperar(1000);
+		metodos.esperar(2000);
 
 	}
 
 	@Entao("validamos a mesagem de retorno do sistema")
 	public void validamosAMesagemDeRetornoDoSistema() {
-		metodos.validarTexto(el.msgSenhaMinuscula, "", "validando senha sem minuscula");
+		metodos.validarTexto(el.msgSenhaMinuscula, "Pelo menos uma Letra Minúscula", "validando senha sem minuscula");
 		metodos.screenShot("senha_sem_minuscula");
 		metodos.encerrarTeste();
 
@@ -295,8 +329,7 @@ public class CadastroRapidoTestes {
 	public void preencherOsCamposComDados() {
 		metodos.escrever(el.cRnomeCompleto, "teste senha sem numeral", "escrevendo nome");
 		metodos.escrever(el.cRnascimento, "16121986", "escrevendo data de nascimento");
-		metodos.escrever(el.cRemail, "ta8na60jhc96@mirnode.com", "preenchendo o email");
-		
+		metodos.escrever(el.cRemail, "ta8n0j6@mrnode.com", "preenchendo o email");
 
 	}
 
@@ -309,7 +342,7 @@ public class CadastroRapidoTestes {
 
 	@Entao("o sistema avisa o erro no campo senha")
 	public void oSistemaAvisaOErroNoCampoSenha() {
-		metodos.validarTexto(el.msgSenhaMaiuscula, "", "validando senha sem maiuscula");
+		metodos.validarTexto(el.msgSenhaMaiuscula, "Pelo menos uma Letra Maiúscula", "validando senha sem maiuscula");
 		metodos.screenShot("senha_sem_maiuscula");
 		metodos.encerrarTeste();
 
@@ -319,21 +352,20 @@ public class CadastroRapidoTestes {
 	public void preencherTodosOsCampos() {
 		metodos.escrever(el.cRnomeCompleto, "teste senha sem numeral", "escrevendo nome");
 		metodos.escrever(el.cRnascimento, "16121986", "escrevendo data de nascimento");
-		metodos.escrever(el.cRemail, "ta8njtyc96@mirjpode.com", "preenchendo o email");
-		
+		metodos.escrever(el.cRemail, "ta8nj96@mrpode.com", "preenchendo o email");
 
 	}
 
 	@Quando("no campo senha nao inserir os oito caracteres")
 	public void noCampoSenhaNaoInserirOsOitoCaracteres() {
 		metodos.escrever(el.cRsenha, "Teste12", "senha sem os oito caracteres");
-		metodos.esperar(1000);
+		metodos.esperar(2000);
 
 	}
 
 	@Entao("sistema retorna uma mensagem com um aviso no campo")
 	public void sistemaRetornaUmaMensagemComUmAvisoNoCampo() {
-		metodos.validarTexto(el.msgSenhaOito, "", "validando senha sem oito caracteres");
+		metodos.validarTexto(el.msgSenhaOito, "Pelo menos Oito Caracteres", "validando senha sem oito caracteres");
 		metodos.screenShot("senha_sem_oito_caracteres");
 		metodos.encerrarTeste();
 
@@ -341,17 +373,18 @@ public class CadastroRapidoTestes {
 
 	@Quando("preencher os campos com dados validos")
 	public void preencherOsCamposComDadosValidos() {
-		metodos.escrever(el.cRnomeCompleto, "teste cadastro rapido", "escrendo nome");
-		metodos.escrever(el.cRemail, "tan8asatyrd46@maokode.com", "preenchendo o email");
+		metodos.escrever(el.cRnomeCompleto, "cadastro sem aceitar termos", "escrendo nome");
+		metodos.escrever(el.cRnascimento, "01012008", "preenchendo idade");
+		metodos.escrever(el.cRemail, "t4k4785i@meode.com", "preenchendo o email");
 		metodos.escrever(el.cRsenha, "Teste123", "preenchendo a senha");
-		
+
 	}
 
 	@Quando("nao aceitar os termos de uso e condicoes")
 	public void naoAceitarOsTermosDeUsoECondicoes() {
-		metodos.clicar(el.cRCurriculo, "clicando no upload de curriculo");
-		metodos.esperar(1000);
-		metodos.uploadArquivo("anexando curriculo");
+		metodos.anexarCurriculo("anexando curriculo");
+		metodos.clicar(el.cRSalvarCadastro, "enviando cadastro");
+		metodos.esperar(2000);
 
 	}
 
@@ -360,7 +393,6 @@ public class CadastroRapidoTestes {
 		metodos.esperar(1000);
 		metodos.screenShot("nao_aceitar_termos");
 		metodos.encerrarTeste();
-		
 
 	}
 

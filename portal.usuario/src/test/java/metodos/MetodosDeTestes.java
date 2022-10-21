@@ -13,9 +13,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import coneccoes.DriversFactory;
+import elementos.ElementosWeb;
 
-public class MetodosDeTestes extends DriversFactory {
+public class MetodosDeTestes extends DriversFactory{
 
+	ElementosWeb el = new ElementosWeb();
 	
 
 	public void clicar(By elemento, String descricaoPasso) {
@@ -176,12 +178,25 @@ public class MetodosDeTestes extends DriversFactory {
 
 		}
 	}
+	public void aceitarTermosCriarConta(String descricaoPasso) {
+		clicar(el.termoUso, "aceitando termos");
+		esperar(2000);
+		clicar(el.entendi, "clicando em entendi");
+		esperar(1000);
+		clicar(el.avisoPrivacidade, "aceitando aviso de privacidade");
+	}
 
 		public void aceitarTermos(String descricaoPasso) {
-			driver.findElement(By.xpath("//span[text()=' li e concordo com os Termos e Condições de Uso ']")).click();
-		    esperar(2000);
-		    driver.findElement(By.xpath("//span[text()='entendi']")).click();
-		    driver.findElement(By.xpath("//*[@id=\"mat-checkbox-6\"]/label")).click();
+			clicar(el.cRtermos, "aceitando termos");
+			esperar(2000);
+			clicar(el.cREntendi, "clicando em entendi");
+			esperar(1000);
+			clicar(el.cRaviso, "aceitando aviso de privacidade");
+		}
+		public void anexarCurriculo(String descricaoPasso) {
+			clicar(el.cRCurriculo, "clicando no upload de curriculo");
+			esperar(1000);
+			uploadArquivo("anexando curriculo");
 		}
 		
 	}

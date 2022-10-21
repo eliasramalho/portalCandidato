@@ -25,11 +25,12 @@ public class EasyApply {
 		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
-		metodos.escrever(el.emailEasy, "negop42450@inkmoto.com", "preenchendo campo email");
+		metodos.escrever(el.emailEasy, "negopwe0@kmdoto.com", "preenchendo campo email");
 		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo campo senha");
-		metodos.clicar(el.termoUso, "clicando nos termos");
+		metodos.clicar(el.termoUsoEasy, "clicando nos termos");
 		metodos.esperar(1000);
-		metodos.clicar(el.entendi, "aceitando os termos");
+		metodos.clicar(el.entendiEasy, "aceitando os termos");
+		metodos.esperar(1000);
 		metodos.clicar(el.avisoEasy, "aceitando aviso de privacidade");
 
 	}
@@ -100,7 +101,7 @@ public class EasyApply {
 		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
-		metodos.escrever(el.emailEasy, "nibocm2@deitada.com", "preenchendo campo email");
+		metodos.escrever(el.emailEasy, "nibhgvm2@deiada.com", "preenchendo campo email");
 		
 
 	}
@@ -301,7 +302,7 @@ public class EasyApply {
 
 	@Quando("preencher campo senha")
 	public void preencherCampoSenha() {
-		metodos.escrever(el.msgErroEmailEasy1, "widor51675@migonom.com", "escrevendo email");
+		metodos.escrever(el.emailEasy1, "widz75@mgonom.com", "escrevendo email");
 		metodos.esperar(1000);
 
 	}

@@ -1,6 +1,6 @@
 #language: pt
 
-  @CadastroRapido
+ @CadastroRapido
 Funcionalidade: Realizar cadastro rapido
 Como usuario 
 Quero acessar o site da randstand
@@ -16,7 +16,7 @@ E incluir um curriculo
 E aceitar os termos e condicoes
 Entao sistema realiza o cadastro de usuario
 
-@negativo @teste
+@negativo @teste 
 Cenario: Realizar cadastro com campos em branco
 Quando nao preencher os campos 
 Entao o sistema retorna a mensagem de erro
@@ -27,13 +27,13 @@ Quando preencher o campo email
 E os dados forem invalidos
 Entao o sistema retorna uma mensagem
 
-@positivo 
+@positivo
 Cenario: Preencher campos data nascimento com dados invalidos
 Quando Preencher o campo data de nascimento
 Mas Contem dados invalidos no campo
 Entao O sistema retorna um modal com uma mensagem
 
-@positivo
+@positivo 
 Cenario: Usuario menor de quatorze anos
 Quando preencher os campos com dados corretos
 E preencher idade inferior a quatorze anos
@@ -45,13 +45,13 @@ Quando preencher os dados do formulario corretamente
 E preencher modal de validacao de usuaario 
 Entao usuario de menor cadastrado com sucesso
 
-@negativo 
+@negativo  
 Cenario: Modal de validacao com campos em branco
 Quando preencher a idade do usuario menor que quatorze anos
 E deixar os campos do modal em branco
 Entao validamos o retorno do sistema nos campos com erro
 
-@negativo 
+@negativo
 Cenario: Modal de validacao nome invalido
 Quando acessar o modal
 E preencher campo nome com dados invalidos

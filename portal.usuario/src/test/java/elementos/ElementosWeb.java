@@ -33,7 +33,7 @@ public class ElementosWeb {
 			
 		
 		//elementos da pag de sucesso
-		public By msgSucessoCriarConta = By.xpath("//h1[text()='Confirme sua conta no seu e-mail']");
+		public By msgSucessoCriarConta = By.xpath("//*[text()='Confirme sua conta no seu e-mail']");
 		public By btnLeveParaLogin = By.xpath("//span[text()=' me leve para o login ']");
 		
 		
@@ -83,8 +83,18 @@ public class ElementosWeb {
 		public By cRaviso = By.xpath("//*[@id=\"mat-checkbox-2\"]/label/div");
 		public By cRSalvarCadastro = By.xpath("//span[text()=' salvar cadastro ']");
 		public By cRMsgSucesso = By.xpath("");
+		public By msgErroNomeBranco = By.xpath("//*[@class='mat-error ng-tns-c113-0 ng-star-inserted']");
+		public By msgErroNascimento = By.xpath("//*[text()='Por favor, preencha o campo Data de Nascimento']");
+		public By msgErroEmailBranco = By.xpath("//*[text()='Por favor, preencha o campo Email']");
+		public By msgErroSenhaBranco = By.xpath("//*[text()=' Por favor, preencha o campo Senha ']");
+		//public By idadeNaoPermitida = By.xpath("//*[@id=\"mat-dialog-0\"]//h1");
+		public By idadeNaoPermitida = By.xpath("//h1[text()='Idade não permitida']");
+		
+		//modal validacao tutor
 		public By msgErroNome = By.xpath("//*[text()='Nome do Responsável']");
-		public By msgErroEmail = By.xpath("//span[text()='Por favor, forneça um formato de Email válido']");
+		public By msgErroEmail = By.xpath("//*[text()='Por favor, forneça um formato de Email válido']");
+		//*[@id="mat-error-6"]/span
+		
 		public By msgSenhaNumeral = By.xpath("//p[text()='Pelo menos um Número ou Símbolo']");
 		public By msgSenhaMinuscula = By.xpath("//p[text()='Pelo menos uma Letra Minúscula']");
 		public By msgSenhaMaiuscula = By.xpath("//p[text()='Pelo menos uma Letra Maiúscula']");
@@ -99,7 +109,9 @@ public class ElementosWeb {
 		public By senhaEasy = By.id("mat-input-3");
 		public By curriculoEasy = By.xpath("//div[@class='upload-container']");
 		public By enviarCandidatura = By.xpath("//*[text()=' enviar minha candidatura ']");
-		public By avisoEasy = By.xpath("//*[@id=\"mat-checkbox-4\"]/label/div");
+		public By termoUsoEasy = By.xpath("//*[@id=\"mat-checkbox-1\"]/label/div");
+		public By entendiEasy = By.xpath("//span[text()='entendi']");
+		public By avisoEasy = By.xpath("//*[@id=\"mat-checkbox-2\"]/label/div");
 		public By msgErroCampoNomeEasy = By.xpath("//*[text()=' Por favor, preencha o campo Nome Completo ']");
 		public By msgErroCampoDataEasy = By.xpath("//*[@id=\"mat-error-1\"]");
 		public By verSenhaEasy = By.xpath("//img[@class='eye-icon ng-tns-c113-3']");
