@@ -1,6 +1,6 @@
 #language: pt
 
- @easyApply
+  @easyApply
 Funcionalidade: Candidatura Rapida
   Como usuario
   Quero realizar a candidatura rapida
@@ -9,7 +9,7 @@ Funcionalidade: Candidatura Rapida
 Contexto: acessando a tela de candidatura rapida
 Dado que eu esteja no menu de cadidatura rapida
   
-  @positivio @smoke 
+  @positivio @smoke
   Cenario: Realizar candidatura rapida
     Quando preencher os dados corretamente
     E clicar no botao enviar meu cv
@@ -63,7 +63,7 @@ Dado que eu esteja no menu de cadidatura rapida
     E dados do campo nome forem invalidos
     Entao valido resposta do sistema no campo nome
     
-    @positivo 
+    @positivo  @regressivos
     Cenario: Candidatura rapida login comum
     Quando preencher campo email com dados validos
     E preencher campo senha corretamente

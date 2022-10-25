@@ -189,10 +189,18 @@ public class MetodosDeTestes extends DriversFactory{
 		public void aceitarTermos(String descricaoPasso) {
 			clicar(el.cRtermos, "aceitando termos");
 			esperar(2000);
-			clicar(el.cREntendi, "clicando em entendi");
+			clicar(el.cRLiEConcordo, "clicando em entendi");
 			esperar(1000);
 			clicar(el.cRaviso, "aceitando aviso de privacidade");
 		}
+		public void aceitarTermosEasyApply(String descricaoPasso ) {
+			clicar(el.termoUsoEasy, descricaoPasso);
+			esperar(2000);
+			clicar(el.entendiEasy, descricaoPasso);
+			esperar(1000);
+			clicar(el.avisoEasy, descricaoPasso);
+		}
+		
 		public void anexarCurriculo(String descricaoPasso) {
 			clicar(el.cRCurriculo, "clicando no upload de curriculo");
 			esperar(1000);

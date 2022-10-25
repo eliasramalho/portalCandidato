@@ -9,7 +9,7 @@ Para realizar o cadastro rapido
 Contexto: acessar a tela de cadastro rapido
 Dado que eu esteja na tela de cadastro rapido
 
-@positivo @smoke 
+@positivo @smoke
 Cenario: Realizar o cadastro rapido
 Quando eu preencher os dados corretamente
 E incluir um curriculo
@@ -39,13 +39,13 @@ Quando preencher os campos com dados corretos
 E preencher idade inferior a quatorze anos
 Entao o sistema retorna uma modal 
 
-@positivo 
+@positivo
 Cenario: Fluxo completo usuario menor de quatorze anos
 Quando preencher os dados do formulario corretamente
 E preencher modal de validacao de usuaario 
 Entao usuario de menor cadastrado com sucesso
 
-@negativo  
+@negativo 
 Cenario: Modal de validacao com campos em branco
 Quando preencher a idade do usuario menor que quatorze anos
 E deixar os campos do modal em branco

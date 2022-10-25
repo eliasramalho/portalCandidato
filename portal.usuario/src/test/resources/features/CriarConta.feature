@@ -9,7 +9,7 @@ Para acessar o portal
 Contexto: acessar a tela de cadastro comum
 Dado que eu esteja na tela de login
 
-@positivo @smoke 
+@positivo @smoke
 Cenario: Realizar cadastro de usuario 
 Quando eu clicar no botao criar conta
 E preencher formulario com dados validos
@@ -67,7 +67,7 @@ Quando preenher o campo senha
 E inseir dados que nao contem numeral
 Entao Validamos a mensagem de aviso de retorno do sistema
 
-@negativo @criarConta @validarTermos @regressivos
+@negativo @criarConta @validarTermos 
 Cenario: criar usuario e nao aceitar os termos de uso
 Quando preencher formulario para criar novo usuario
 Mas nao aceitar os termos

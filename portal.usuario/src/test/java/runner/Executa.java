@@ -44,7 +44,7 @@ public class Executa extends DriversFactory {
 		}
 		
 		driver.manage().window().maximize();
-		driver.get(url);
+		driver.get(urlEasyApply);
 		
 	}
    

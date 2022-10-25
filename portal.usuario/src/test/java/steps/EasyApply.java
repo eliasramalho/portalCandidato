@@ -25,13 +25,9 @@ public class EasyApply {
 		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
-		metodos.escrever(el.emailEasy, "negopwe0@kmdoto.com", "preenchendo campo email");
+		metodos.escrever(el.emailEasy, "nego4w@kmoto.com", "preenchendo campo email");
 		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo campo senha");
-		metodos.clicar(el.termoUsoEasy, "clicando nos termos");
-		metodos.esperar(1000);
-		metodos.clicar(el.entendiEasy, "aceitando os termos");
-		metodos.esperar(1000);
-		metodos.clicar(el.avisoEasy, "aceitando aviso de privacidade");
+		metodos.aceitarTermosEasyApply("aceitando termos de uso");
 
 	}
 
@@ -43,7 +39,8 @@ public class EasyApply {
 
 	@Entao("candidatura enviada com sucesso")
 	public void candidaturaEnviadaComSucesso() {
-		metodos.esperar(7000);
+		metodos.esperar(8000);
+		metodos.validarTexto(el.msgCandidaturaSucesso, "obrigado por se candidatar", "validando msg de sucesso ");
 		metodos.screenShot("candidatura_rapida_sucesso");
 		metodos.encerrarTeste();
 
@@ -101,7 +98,7 @@ public class EasyApply {
 		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
-		metodos.escrever(el.emailEasy, "nibhgvm2@deiada.com", "preenchendo campo email");
+		metodos.escrever(el.emailEasy, "nibhgvm2@deiaa.com", "preenchendo campo email");
 		
 
 	}
@@ -251,7 +248,7 @@ public class EasyApply {
 
 	@Quando("preencher campo email com dados validos")
 	public void preencherCampoEmailComDadosValidos() {
-		metodos.escrever(el.emailEasy1, "usuarioteste41@yahoo.com", "preenchendo email corretamente");
+		metodos.escrever(el.emailEasy1, "lasosi4100@cadolls.com", "preenchendo email corretamente");
 
 	}
 
@@ -264,14 +261,14 @@ public class EasyApply {
 	@Quando("clicar no botao candidatar-se")
 	public void clicarNoBotaoCandidatarSe() {
 		metodos.clicar(el.btnCandidatarEasy, "clicando no botao candidatar se");
-		metodos.esperar(2000);
+		metodos.esperar(6000);
 		
 
 	}
 
 	@Entao("login candiatura realizada com sucesso")
 	public void loginCandiaturaRealizadaComSucesso() {
-		metodos.validarTexto(el.textoCandidaturaEfetuada, "candidatura efetuada.", "validando msg candidatura efetuada");
+		metodos.validarTexto(el.msgCandidaturaSucesso, "obrigado por se candidatar", "validando msg candidatura efetuada");
 		metodos.screenShot("candidatura_com_sucesso");
 		metodos.esperar(1000);
 		metodos.encerrarTeste();
