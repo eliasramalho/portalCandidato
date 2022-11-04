@@ -73,6 +73,11 @@ Quando preencher formulario para criar novo usuario
 Mas nao aceitar os termos
 Entao botao criar conta nao fica selecionavel
 
+@negativo @criarConta @validarSenha
+Cenario: Cricar um novo usuario com senhas diferentes
+Quando acessar o portal para criar um novo usario
+E preencher com senhas diferentes
+Entao validamos o retorno do erro nas senhas
 
 
 

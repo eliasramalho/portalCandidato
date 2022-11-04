@@ -5,13 +5,14 @@ import org.openqa.selenium.By;
 public class ElementosWeb {
 
 	//xpath esqueci senha
-		public By esqueciSenha = By.xpath("//a[text()='esqueci a senha ']");
-		public By emailEsqueciSenha = By.xpath("//*[@id=\"mat-input-6\"]");
+		public By esqueciSenha = By.xpath("//*[text()='esqueci minha senha ']");
+		public By emailEsqueciSenha = By.id("mat-input-6");
 		public By recuperarSenha = By.xpath("//span[text()='recuperar senha']"); 
 				//By.xpath("//button[@class='mat-focus-indicator perso-button perso-button-link "
 				//+ "link social mat-stroked-button mat-button-base mat-button-disabled']//span[text()='recuperar senha']");
 		public By criarNovaConta = By.xpath("//a[@class='mat-focus-indicator perso-button perso-button-link link social mat-stroked-button mat-button-base']//span[text()='criar uma nova conta']");
 		public By voltar = By.xpath("//span[text()='voltar']");
+		public By msgErroEmailReset = By.xpath("//*[text()=' Por favor, preencha o campo email ']");
 
 		
 		//xpath do menu criar conta
@@ -30,7 +31,16 @@ public class ElementosWeb {
 		public By criarConta = By.xpath("//span[text()='criar conta']");
 		public By msgEmailInvalido = By.xpath("//span[text()='Por favor, forneça um formato de Email válido']");
 		
-			
+		public By msgSenhaNumeral = By.xpath("//p[text()='Pelo menos um Número ou Símbolo']");
+		public By msgSenhaMinuscula = By.xpath("//p[text()='Pelo menos uma Letra Minúscula']");
+		public By msgSenhaMaiuscula = By.xpath("//p[text()='Pelo menos uma Letra Maiúscula']");
+		public By msgSenhaOito = By.xpath("//p[text()='Pelo menos Oito Caracteres']");
+		public By msgSenhaDiferente = By.xpath("//*[text()='As senhas não coincidem, por favor, verificar se foram preenchidas corretamente']");
+		
+		//elementos do reset de senha
+		public By resetSenha = By.xpath("//*[@id=\"mat-input-0\"]");
+		public By resetConfSenha = By.xpath("//*[@id=\"mat-input-1\"]");
+		
 		
 		//elementos da pag de sucesso
 		public By msgSucessoCriarConta = By.xpath("//*[text()='Confirme sua conta no seu e-mail']");
@@ -50,18 +60,23 @@ public class ElementosWeb {
 		public By email = By.xpath("//*[@id=\"mat-input-4\"]");
 		public By senha = By.xpath("//*[@id=\"mat-input-5\"]");
 		public By btnFazerLogin = By.xpath("//span[text()='fazer login ']");
-		public By resgatarConta = By.xpath("//*[text()='resgatar conta antiga ']");
-		public By emailResgatarConta = By.xpath("//app-public-recover-account/div/div/form/mat-form-field[1]/div/div[1]/div[3]");
-		public By cpfResgatarConta = By.xpath("//div[@class='mat-form-field-infix ng-tns-c113-22']");
-		public By btnParaResgatarConta = By.xpath("//span[text()='recuperar senha']");
-		public By msgEmailEnviado = By.xpath("//h1[text()='email enviado.']");
-		public By facebook = By.xpath("//span[text()=' Facebook ']");
+		public By resgatarConta = By.xpath("//*[text()='recuperar conta ']");
+		public By facebook = By.xpath("//span[text()='Facebook']");
 		public By google = By.xpath("//*[@class='google-icon']");
+		
+		//resgatar conta
+		public By emailResgatarConta = By.id("mat-input-6");
+		public By cpfResgatarConta = By.id("mat-input-7");
+		public By msgErroCampoEmail = By.xpath("//*[text()=' Por favor, preencha o campo email ']");
+		public By msgErroCampoCPF = By.xpath("//*[text()=' Por favor, preencha o campo cpf ']");
+		public By btnParaResgatarConta = By.xpath("//span[text()='recuperar senha']");
+		public By msgEmailEnviado = By.xpath("//*[text()='email enviado.']");
+		
 		
 		//perfil do usuario
 		public By campoBuscaHome = By.xpath("//*[@id=\"mat-input-6\"]");
 		public By btnBuscar = By.xpath("//button[@class='mat-focus-indicator perso-button search-button mat-stroked-button mat-button-base mat-primary']");
-		public By texto = By.xpath("//p[text()='é hora de impulsionar o seu talento.']");
+		public By textoBoasVindas = By.xpath("//*[text()='é hora de impulsionar o seu talento.']");
 		public By menu = By.xpath("//*[@id=\"profileOptionsButton\"]");
 		public By meuCurriculo = By.xpath("//a[text()='meu currículo']");
 		public By analista = By.xpath("//h1[text()='Analista de Desenvolvimento Pleno']");
@@ -95,10 +110,7 @@ public class ElementosWeb {
 		public By msgErroEmail = By.xpath("//*[text()='Por favor, forneça um formato de Email válido']");
 		//*[@id="mat-error-6"]/span
 		
-		public By msgSenhaNumeral = By.xpath("//p[text()='Pelo menos um Número ou Símbolo']");
-		public By msgSenhaMinuscula = By.xpath("//p[text()='Pelo menos uma Letra Minúscula']");
-		public By msgSenhaMaiuscula = By.xpath("//p[text()='Pelo menos uma Letra Maiúscula']");
-		public By msgSenhaOito = By.xpath("//p[text()='Pelo menos Oito Caracteres']");
+		
 		
 		
 		
@@ -112,6 +124,7 @@ public class ElementosWeb {
 		public By termoUsoEasy = By.xpath("//*[@id=\"mat-checkbox-1\"]/label/div");
 		public By entendiEasy = By.xpath("//span[text()='li e concordo']");
 		public By avisoEasy = By.xpath("//*[@id=\"mat-checkbox-2\"]/label/div");
+		
 		public By msgErroCampoNomeEasy = By.xpath("//*[text()=' Por favor, preencha o campo Nome Completo ']");
 		public By msgErroCampoDataEasy = By.xpath("//*[@id=\"mat-error-1\"]");
 		public By verSenhaEasy = By.xpath("//img[@class='eye-icon ng-tns-c113-3']");
@@ -120,15 +133,22 @@ public class ElementosWeb {
 		public By msgErroSenhaMaiuscula = By.xpath("//*[text()='1 letra maíuscula']");
 		public By msgErroSenhaNumeral = By.xpath("//*[text()='1 número']");
 		public By msgErroEmailEasy = By.xpath("//*[@id=\"mat-error-6\"]/span");
+		//ja possui conta easy apply
 		public By emailEasy1 = By.xpath("//*[@id=\"mat-input-4\"]");
 		public By senhaEasy2 = By.xpath("//*[@id=\"mat-input-5\"]");
 		public By btnCandidatarEasy = By.xpath("//span[text()=' candidatar-se ']");
-		public By btnProsseguirEasy = By.xpath("//span[text()='prosseguir']");
+		
 		public By msgCandidaturaSucesso = By.xpath("//*[text()='obrigado por se candidatar']");
 		public By textoCandidaturaEfetuada = By.xpath("//h1[text()='candidatura efetuada.']");
-		public By msgErroEmailEasy1 = By.xpath("//*[text()=' Por favor, preencha o campo Nome Completo ']");
+		public By msgErroEmailEasy1 = By.xpath("//*[text()='Por favor, forneça um formato de Email válido']");
 		public By facebookEasy = By.xpath("//span[text()='facebook']");
 		public By googleEasy = By.xpath("//span[text()=' Google ']");
+		//nome e email dos tutores responsaveis
+		public By nomeResponsavelEasy = By.id("mat-input-6");
+		public By emailResponsavelEasy = By.id("mat-input-7");
+		public By btnProsseguirEasy = By.xpath("//span[text()='prosseguir']");
+		public By msgEmailInvalidoEasy = By.xpath("//*[text()='Por favor, forneça um formato de Email válido']");
+		
 		
 	
 		

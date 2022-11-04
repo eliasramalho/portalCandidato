@@ -1,6 +1,6 @@
 #language: pt
 
- @menuLogin
+  @menuLogin
 Funcionalidade: Realizar login comum
 Como usuario 
 Quero realizar o login 
@@ -9,7 +9,7 @@ Para acessar o portal
 Contexto: Acessar a tela de login
 Dado que eu esteja no menu login
 
-@positivo @smoke
+@positivo @smoke 
 Cenario: Fazer login comum
 Quando preencher os campos email e senha corretamente
 E clicar no botao login
@@ -72,7 +72,7 @@ E preencher o email com dados invalidos
 E selecionar botao recuperar senha
 Entao retorna uma mensagem no campo com erro
 
-@positivo 
+@positivo  @regressivos
 Cenario: Realizar login social
 Quando clicar no icone google ou facebook
 E selecionar a conta desejada
@@ -85,6 +85,18 @@ E escolher conta desejada
 E preencher idade do usuario
 E clicar no botao prosseguir
 Entao login relizado
+
+@positivo @linkApp
+Cenario: Clicar no link para download google play
+Quando clicar no botao google play
+Entao validamos se o link redireciona corretamente
+
+@positivo @linkApp
+Cenario: Acessar pagina para download app store
+Quando clicar no botao app store
+Entao validamos se o link funciona corretamente
+
+
 
 
 

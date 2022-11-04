@@ -30,13 +30,15 @@ public class MenuLogin {
 	@Quando("clicar no botao login")
 	public void clicarNoBotaoLogin() {
 		metodos.clicar(el.btnFazerLogin, "clicando no botao fazer login");
-		metodos.esperar(4000);
+		metodos.esperar(8000);
 
 	}
 
 	@Entao("login realizado com sucesso")
 	public void loginRealizadoComSucesso() {
 		metodos.screenShot("login_email_e_senha_sucesso");
+		metodos.esperar(1000);
+		metodos.validarTexto(el.textoBoasVindas, "é hora de impulsionar o seu talento.", "validando texto menu home");
 		metodos.encerrarTeste();
 
 	}
@@ -110,8 +112,8 @@ public class MenuLogin {
 
 	@Entao("email enviado com sucesso")
 	public void emailEnviadoComSucesso() {
-		metodos.esperar(1000);
-		metodos.validarTexto(el.msgEmailEnviado, "", "validando msg de email enviado com sucesso");
+		metodos.esperar(8000);
+		metodos.validarTexto(el.msgEmailEnviado, "email enviado.", "validando msg de email enviado com sucesso");
 		metodos.screenShot("email_enviado_Resgatar_conta_antiga");
 		metodos.encerrarTeste();
 
@@ -119,51 +121,68 @@ public class MenuLogin {
 
 	@Quando("clicar selecionar opcao conta antiga")
 	public void clicarSelecionarOpcaoContaAntiga() {
+		metodos.clicar(el.resgatarConta, "clicando no botao resgatar conta antiga");
 
 	}
 
 	@Quando("Preencher campo email com dados invalidos")
 	public void preencherCampoEmailComDadosInvalidos() {
+		metodos.escrever(el.emailResgatarConta, "usuarioteste41yahoo.com", "preenchendo email invalido");
 
 	}
 
 	@Quando("preencher o campo cpf")
 	public void preencherOCampoCpf() {
+		metodos.escrever(el.cpfResgatarConta, "11123345676", "preenchendo campo cpf");
 
 	}
 
 	@Quando("clicar na opcao recuperar senha")
 	public void clicarNaOpcaoRecuperarSenha() {
+		metodos.clicar(el.btnParaResgatarConta, "clicando para recuperar conta antiga");
+		metodos.esperar(4000);
 
 	}
 
 	@Entao("sistema retorna uma mensagem no campo com erro")
 	public void sistemaRetornaUmaMensagemNoCampoComErro() {
+		//metodos.validarTexto(el.msgErroCampoEmail, " Por favor, preencha o campo email ", "validando msg de erro campo email");
+		metodos.screenShot("reasgatar_conta_email_invalido");
+		metodos.encerrarTeste();
 
 	}
 
 	@Quando("selecionar o botao recuperar conta antiga")
 	public void selecionarOBotaoRecuperarContaAntiga() {
+		metodos.clicar(el.resgatarConta, "clicando no botao resgatar conta antiga");
 
 	}
 
 	@Quando("Preencher campo email corretamente")
 	public void preencherCampoEmailCorretamente() {
+		metodos.escrever(el.emailResgatarConta, "usuarioteste41@yahoo.com", "preenchendo email invalido");
 
 	}
 
 	@Quando("preencher o cpf invalido")
 	public void preencherOCpfInvalido() {
+		metodos.escrever(el.cpfResgatarConta, "115676", "preenchendo campo cpf");
 
 	}
 
 	@Quando("selecionar o botao recuperar senha")
 	public void selecionarOBotaoRecuperarSenha() {
+		metodos.clicar(el.btnParaResgatarConta, "clicando para recuperar conta antiga");
+		metodos.esperar(4000);
 
 	}
 
 	@Entao("sistema retorna uma mensagem com erro")
 	public void sistemaRetornaUmaMensagemComErro() {
+		//metodos.validarTexto(el.msgErroCampoCPF, " Por favor, preencha o campo cpf ", "validando erro no campo cpf");
+		metodos.screenShot("rasgatar_conta_cpf_invalido");
+		metodos.encerrarTeste();
+		
 
 	}
 
@@ -183,12 +202,13 @@ public class MenuLogin {
 	@Quando("clicar no botao de recuperar senha")
 	public void clicarNoBotaoDeRecuperarSenha() {
 		metodos.clicar(el.recuperarSenha, "clincando no botao recuperar senha");
-		metodos.esperar(2000);
+		metodos.esperar(6000);
 
 	}
 
 	@Entao("o email e enviado com sucesso")
 	public void oEmailEEnviadoComSucesso() {
+		metodos.validarTexto(el.msgSucesso, "email enviado.", "validando msg email enviado");
 		metodos.screenShot("esqueci_senha_email_sucesso");
 		metodos.encerrarTeste();
 		
@@ -211,7 +231,7 @@ public class MenuLogin {
 	@Quando("escolher a opcao recuperar senha")
 	public void escolherAOpcaoRecuperarSenha() {
 		metodos.clicar(el.recuperarSenha, "clicando no botao recuperar senha");
-		metodos.esperar(1000);
+		metodos.esperar(2000);
 
 	}
 
@@ -237,13 +257,14 @@ public class MenuLogin {
 	@Quando("selecionar botao recuperar senha")
 	public void selecionarBotaoRecuperarSenha() {
 		metodos.clicar(el.recuperarSenha, "clicando no botao recuperar senha");
-		metodos.esperar(1000);
+		metodos.esperar(6000);
 		
 
 	}
 
 	@Entao("retorna uma mensagem no campo com erro")
 	public void retornaUmaMensagemNoCampoComErro() {
+		//metodos.validarTexto(el.msgErroEmailReset, " Por favor, preencha o campo email ", "validando msg de erro no campo email");
 		metodos.screenShot("esqueci_senha_email_invalido");
 		metodos.encerrarTeste();
 		

@@ -51,6 +51,8 @@ Dado que eu esteja no menu de cadidatura rapida
     E no campo senha preencher com senha sem oito caractere
     Entao sistemma retorna mensagem de aviso na senha sem oito caractere
     
+    
+    
     @negativo
     Cenario: Candidatura rapida campo email invalido
     Quando Prencher os campos do formulario
@@ -63,7 +65,7 @@ Dado que eu esteja no menu de cadidatura rapida
     E dados do campo nome forem invalidos
     Entao valido resposta do sistema no campo nome
     
-    @positivo  @regressivos
+    @positivo  
     Cenario: Candidatura rapida login comum
     Quando preencher campo email com dados validos
     E preencher campo senha corretamente
@@ -91,6 +93,52 @@ Dado que eu esteja no menu de cadidatura rapida
     Cenario: Candidatura rapida login social google
     Quando clicar no botao login com google
     Entao login social com google com sucesso
+    
+    @positivo
+    Cenario: Candidatura rapida usuario menor de idade
+    Quando inserir os dados nos campos do formulario
+    E no campo idade informar que usuario for menor de idade
+    E inserir dados dos responsaveis corretamente
+    E clicar pra enviar a candidatura
+    Entao validamos o retorno do sistema
+    
+    @negativo
+    Cenario: Usuario menor de idade campo responsaveis em branco
+    Quando inserir os dados no formulario
+    E na idade informar que for menor de idade
+    E nos campos dos responsaveis permanecer em branco
+    Entao sistema nao permite prosseguir
+    
+    @negativo  
+    Cenario: Usuario menor de idade nome responsavel invalido
+    Quando inseir os dados nos campos
+    E no campo informar a idade do usuario de menor
+    E nos campos dos responsaveis inseir nome invalido
+    Entao nao permite avancar no cadastro
+    
+    @negativo 
+    Cenario: Usuario menor de idade email invalido
+    Quando estiver criando um usuario novo
+    E informar na idade que usuario e menor de idade
+    E nos campos dos responsaveis informar email invalido
+    Entao validamos a mensagem de erro abaixo do campo
+    
+    @negativo 
+    Cenario: Usuario com idade nao permitida
+    Quando estiver criando um novo usuario
+    E colocar dados informando que a idade nao e permitida
+    Entao validamos modal de retorno do sistema
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

@@ -72,8 +72,6 @@ public class EasyApply {
 	@Quando("preencher os campos do formulario")
 	public void preencherOsCamposDoFormulario() {
 		metodos.escrever(el.nomeEasy, "Teste nascimento invalido", "escrevendo nome");
-		
-		
 
 	}
 
@@ -99,7 +97,6 @@ public class EasyApply {
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
 		metodos.escrever(el.emailEasy, "nibhgvm2@deiaa.com", "preenchendo campo email");
-		
 
 	}
 
@@ -116,7 +113,6 @@ public class EasyApply {
 		metodos.validarTexto(el.msgErroSenhaNumeral, "1 número", "validando msg de erro sem numeral");
 		metodos.screenShot("senha_sem_numeral_easy_apply");
 		metodos.encerrarTeste();
-		
 
 	}
 
@@ -218,7 +214,8 @@ public class EasyApply {
 	@Entao("valido a resposta de retorno do sistema")
 	public void validoARespostaDeRetornoDoSistema() {
 		metodos.esperar(1000);
-		metodos.validarTexto(el.msgErroEmailEasy, "Por favor, forneça um formato de Email válido", "validando msg de erro no email");
+		metodos.validarTexto(el.msgErroEmailEasy, "Por favor, forneça um formato de Email válido",
+				"validando msg de erro no email");
 		metodos.screenShot("teste_email_invalido_easy");
 		metodos.encerrarTeste();
 
@@ -262,17 +259,16 @@ public class EasyApply {
 	public void clicarNoBotaoCandidatarSe() {
 		metodos.clicar(el.btnCandidatarEasy, "clicando no botao candidatar se");
 		metodos.esperar(6000);
-		
 
 	}
 
 	@Entao("login candiatura realizada com sucesso")
 	public void loginCandiaturaRealizadaComSucesso() {
-		metodos.validarTexto(el.msgCandidaturaSucesso, "obrigado por se candidatar", "validando msg candidatura efetuada");
+		metodos.validarTexto(el.msgCandidaturaSucesso, "obrigado por se candidatar",
+				"validando msg candidatura efetuada");
 		metodos.screenShot("candidatura_com_sucesso");
 		metodos.esperar(1000);
 		metodos.encerrarTeste();
-		
 
 	}
 
@@ -291,7 +287,7 @@ public class EasyApply {
 	@Entao("valido retorno do sistema")
 	public void validoRetornoDoSistema() {
 		metodos.esperar(2000);
-		metodos.validarTexto(el.msgErroEmailEasy1, "", "validando msg erro email invalido");
+		metodos.validarTexto(el.msgErroEmailEasy1, "Por favor, forneça um formato de Email válido", "validando msg erro email invalido");
 		metodos.screenShot("email_invalido_easy");
 		metodos.encerrarTeste();
 
@@ -345,6 +341,179 @@ public class EasyApply {
 	public void loginSocialComGoogleComSucesso() {
 		metodos.screenShot("login_social_google");
 		metodos.encerrarTeste();
+
+	}
+
+	@Quando("inserir os dados nos campos do formulario")
+	public void inserirOsDadosNosCamposDoFormulario() {
+		metodos.escrever(el.nomeEasy, "usuario menor de idade", "preenchendo campo nome");
+		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
+		metodos.uploadArquivo("anexando curriculo");
+		metodos.esperar(1000);
+		metodos.escrever(el.emailEasy, "nea5si72@kmo5to.com", "preenchendo campo email");
+		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo campo senha");
+		metodos.aceitarTermosEasyApply("aceitando termos de uso");
+		metodos.esperar(2000);
+
+	}
+
+	@Quando("no campo idade informar que usuario for menor de idade")
+	public void noCampoIdadeInformarQueUsuarioForMenorDeIdade() {
+		metodos.escrever(el.dataEasy, "01012008", "data de nascimento");
+
+	}
+
+	@Quando("inserir dados dos responsaveis corretamente")
+	public void inserirDadosDosResponsaveisCorretamente() {
+		metodos.escrever(el.nomeResponsavelEasy, "teste de responsavel", "nome responsavel");
+		metodos.escrever(el.emailResponsavelEasy, "teste1234@tese.com", "email respponsavel");
+		metodos.esperar(2000);
+		metodos.clicar(el.btnProsseguir, "prosseguindo");
+		metodos.esperar(2000);
+
+	}
+
+	@Quando("clicar pra enviar a candidatura")
+	public void clicarPraEnviarACandidatura() {
+		metodos.clicar(el.enviarCandidatura, "enviiando candidatura");
+		metodos.esperar(9000);
+
+	}
+
+	@Entao("validamos o retorno do sistema")
+	public void validamosORetornoDoSistema() {
+		metodos.validarTexto(el.msgCandidaturaSucesso, "obrigado por se candidatar", "validando msg de sucesso ");
+		metodos.esperar(1000);
+		metodos.screenShot("candidatura_rapida_usuario_menor_sucesso");
+		metodos.encerrarTeste();
+
+	}
+
+	@Quando("inserir os dados no formulario")
+	public void inserirOsDadosNoFormulario() {
+		metodos.escrever(el.nomeEasy, "usuario menor de idade", "preenchendo campo nome");
+		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
+		metodos.uploadArquivo("anexando curriculo");
+		metodos.esperar(1000);
+		metodos.escrever(el.emailEasy, "neapa3i72@kmo5to.com", "preenchendo campo email");
+		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo campo senha");
+		metodos.aceitarTermosEasyApply("aceitando termos de uso");
+		metodos.esperar(2000);
+
+	}
+
+	@Quando("na idade informar que for menor de idade")
+	public void naIdadeInformarQueForMenorDeIdade() {
+		metodos.escrever(el.dataEasy, "01012008", "data de nascimento");
+
+	}
+
+	@Quando("nos campos dos responsaveis permanecer em branco")
+	public void nosCamposDosResponsaveisPermanecerEmBranco() {
+		metodos.clicar(el.nomeResponsavelEasy, "clicando no nome responsavel");
+		metodos.clicar(el.emailResponsavelEasy,  "clicando no email respponsavel");
+		metodos.clicar(el.nomeResponsavelEasy, "clicando no nome responsavel");
+		metodos.esperar(2000);
+		
+
+	}
+
+	@Entao("sistema nao permite prosseguir")
+	public void sistemaNaoPermiteProsseguir() {
+		metodos.screenShot("modal_responsaveis_em_branco");
+		metodos.encerrarTeste();
+
+	}
+
+	@Quando("inseir os dados nos campos")
+	public void inseirOsDadosNosCampos() {
+		metodos.escrever(el.nomeEasy, "usuario menor de idade", "preenchendo campo nome");
+		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
+		metodos.uploadArquivo("anexando curriculo");
+		metodos.esperar(1000);
+		metodos.escrever(el.emailEasy, "a1esv1e@kmo5to.com", "preenchendo campo email");
+		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo campo senha");
+		metodos.aceitarTermosEasyApply("aceitando termos de uso");
+		metodos.esperar(2000);
+
+	}
+
+	@Quando("no campo informar a idade do usuario de menor")
+	public void noCampoInformarAIdadeDoUsuarioDeMenor() {
+		metodos.escrever(el.dataEasy, "01012008", "data de nascimento");
+
+	}
+
+	@Quando("nos campos dos responsaveis inseir nome invalido")
+	public void nosCamposDosResponsaveisInseirNomeInvalido() {
+		metodos.escrever(el.nomeResponsavelEasy, "te12", "nome responsavel");
+		metodos.escrever(el.emailResponsavelEasy, "teste1234@tese.com", "email respponsavel");
+		metodos.esperar(1000);
+		metodos.clicar(el.btnProsseguir, "prosseguindo");
+		metodos.esperar(1000);
+
+	}
+
+	@Entao("nao permite avancar no cadastro")
+	public void naoPermiteAvancarNoCadastro() {
+		metodos.screenShot("modal_responsaveis_nome_invalido");
+		metodos.encerrarTeste();
+		
+		
+
+	}
+
+	@Quando("estiver criando um usuario novo")
+	public void estiverCriandoUmUsuarioNovo() {
+		metodos.escrever(el.nomeEasy, "modal responsaveis email invalido", null);
+
+	}
+
+	@Quando("informar na idade que usuario e menor de idade")
+	public void informarNaIdadeQueUsuarioEMenorDeIdade() {
+		metodos.escrever(el.dataEasy, "01012008", null);
+		metodos.esperar(1000);
+
+	}
+
+	@Quando("nos campos dos responsaveis informar email invalido")
+	public void nosCamposDosResponsaveisInformarEmailInvalido() {
+		metodos.escrever(el.nomeResponsavelEasy, "teste email invalido", null);
+		metodos.esperar(1000);
+		metodos.escrever(el.emailResponsavelEasy, "teste.com", null);
+		metodos.esperar(1000);
+		metodos.clicar(el.btnProsseguirEasy, null);
+		metodos.esperar(1000);
+
+	}
+
+	@Entao("validamos a mensagem de erro abaixo do campo")
+	public void validamosAMensagemDeErroAbaixoDoCampo() {
+		metodos.validarTexto(el.msgEmailInvalidoEasy, "Por favor, forneça um formato de Email válido", "validando msg de email invalido");
+		metodos.screenShot("modal_responsaveis_email_invalido");
+		metodos.encerrarTeste();
+
+	}
+
+	@Quando("estiver criando um novo usuario")
+	public void estiverCriandoUmNovoUsuario() {
+		metodos.escrever(el.nomeEasy, "idade nao permitida", null);
+
+	}
+
+	@Quando("colocar dados informando que a idade nao e permitida")
+	public void colocarDadosInformandoQueAIdadeNaoEPermitida() {
+		metodos.escrever(el.dataEasy, "01012010", "preenchendo campo com idade invalida");
+		metodos.esperar(2000);
+
+	}
+
+	@Entao("validamos modal de retorno do sistema")
+	public void validamosModalDeRetornoDoSistema() {
+		metodos.validarTexto(el.idadeNaoPermitida, "Idade não permitida", "validadndo idade nao permitida");
+		metodos.screenShot("idade_nao_permitida_easy");
+		metodos.encerrarTeste();
+		
 
 	}
 

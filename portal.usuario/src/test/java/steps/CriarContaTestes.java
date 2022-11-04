@@ -53,7 +53,8 @@ public class CriarContaTestes {
 
 	@Entao("validamos mensagem de sucesso")
 	public void validamosMensagemDeSucesso() {
-		metodos.validarTexto(el.msgSucessoCriarConta, "Confirme sua conta no seu e-mail", "validando a tela de sucesso");
+		metodos.validarTexto(el.msgSucessoCriarConta, "Confirme sua conta no seu e-mail",
+				"validando a tela de sucesso");
 		metodos.screenShot("criar_conta_comum_sucesso");
 		metodos.esperar(1000);
 		metodos.encerrarTeste();
@@ -109,11 +110,8 @@ public class CriarContaTestes {
 	@Quando("campo idade for preenchido com dado invalido")
 	public void campoIdadeForPreenchidoComDadoInvalido() {
 		metodos.escrever(el.dataNascimento, "01012015", "data de nascimento invalida");
-		
-		
 
 	}
-
 
 	@Entao("validamos mensagem de sucesso do sistema")
 	public void validamosMensagemDeSucessoDoSistema() {
@@ -145,7 +143,8 @@ public class CriarContaTestes {
 	@Entao("validamos a mensagem de erro no campo email")
 	public void validamosAMensagemDeErroNoCampoEmail() {
 		metodos.esperar(1000);
-		metodos.validarTexto(el.msgEmailInvalido, "Por favor, forneça um formato de Email válido", "validando email invalido");
+		metodos.validarTexto(el.msgEmailInvalido, "Por favor, forneça um formato de Email válido",
+				"validando email invalido");
 		metodos.esperar(1000);
 		metodos.screenShot("criar_conta_email_invalido");
 		metodos.encerrarTeste();
@@ -199,7 +198,8 @@ public class CriarContaTestes {
 	@Entao("valido o retorno do sistema")
 	public void validoORetornoDoSistema() {
 		metodos.esperar(3000);
-		metodos.validarTexto(el.msgSenhaMinuscula, "Pelo menos uma Letra Minúscula", "validando a mensagem senha minuscula");
+		metodos.validarTexto(el.msgSenhaMinuscula, "Pelo menos uma Letra Minúscula",
+				"validando a mensagem senha minuscula");
 		metodos.screenShot("criar_conta_senha_minuscula");
 		metodos.encerrarTeste();
 
@@ -224,7 +224,8 @@ public class CriarContaTestes {
 	@Entao("validamos a mensagem do sistema")
 	public void validamosAMensagemDoSistema() {
 		metodos.esperar(3000);
-		metodos.validarTexto(el.msgSenhaMaiuscula, "Pelo menos uma Letra Maiúscula", "validando a mensagem senha maiuscula");
+		metodos.validarTexto(el.msgSenhaMaiuscula, "Pelo menos uma Letra Maiúscula",
+				"validando a mensagem senha maiuscula");
 		metodos.screenShot("criar_conta_senha_maiuscula");
 		metodos.encerrarTeste();
 
@@ -250,7 +251,8 @@ public class CriarContaTestes {
 	@Entao("sistema retorna uma mensagem")
 	public void sistemaRetornaUmaMensagem() {
 		metodos.esperar(3000);
-		metodos.validarTexto(el.msgSenhaOito, "Pelo menos Oito Caracteres", "validando a mensagem senha oito caracteres");
+		metodos.validarTexto(el.msgSenhaOito, "Pelo menos Oito Caracteres",
+				"validando a mensagem senha oito caracteres");
 		metodos.screenShot("criar_conta_senha_oito_caracteres");
 		metodos.encerrarTeste();
 
@@ -276,7 +278,8 @@ public class CriarContaTestes {
 	@Entao("Validamos a mensagem de aviso de retorno do sistema")
 	public void validamosAMensagemDeAvisoDeRetornoDoSistema() {
 		metodos.esperar(3000);
-		metodos.validarTexto(el.msgSenhaNumeral, "Pelo menos um Número ou Símbolo", "validando a mensagem senha sem numeral");
+		metodos.validarTexto(el.msgSenhaNumeral, "Pelo menos um Número ou Símbolo",
+				"validando a mensagem senha sem numeral");
 		metodos.screenShot("criar_conta_senha_sem_numeral");
 		metodos.encerrarTeste();
 
@@ -304,6 +307,36 @@ public class CriarContaTestes {
 	@Entao("botao criar conta nao fica selecionavel")
 	public void botaoCriarContaNaoFicaSelecionavel() {
 		metodos.screenShot("criar_conta_sem_aceitar_termos");
+		metodos.encerrarTeste();
+
+	}
+
+	@Quando("acessar o portal para criar um novo usario")
+	public void acessarOPortalParaCriarUmNovoUsario() {
+		metodos.clicar(el.btnCriarConta, "acessando pagina de criar conta de usuario");
+		metodos.esperar(1000);
+		metodos.escrever(el.nomeCompleto, "teste nao aceitar os termos", "preenchendo campo nome");
+		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
+		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
+		metodos.escrever(el.emailCriarConta, "teda55r@te5st.com.com", "preenchendo email");
+
+	}
+
+	@Quando("preencher com senhas diferentes")
+	public void preencherComSenhasDiferentes() {
+		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
+		metodos.escrever(el.confSenhaCriarConta, "Teste12345", "preenchendo campo confir senha");
+		metodos.clicar(el.mostrarSenha, "visualizando a senha");
+		metodos.esperar(2000);
+
+	}
+
+	@Entao("validamos o retorno do erro nas senhas")
+	public void validamosORetornoDoErroNasSenhas() {
+		metodos.validarTexto(el.msgSenhaDiferente,
+				"As senhas não coincidem, por favor, verificar se foram preenchidas corretamente",
+				"validando senhas diferentes");
+		metodos.screenShot("validando_senhas_diferenetes");
 		metodos.encerrarTeste();
 
 	}
