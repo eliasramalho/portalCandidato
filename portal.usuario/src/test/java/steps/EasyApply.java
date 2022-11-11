@@ -25,7 +25,7 @@ public class EasyApply {
 		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
-		metodos.escrever(el.emailEasy, "nego4w@kmoto.com", "preenchendo campo email");
+		metodos.escrever(el.emailEasy, "diy32v87@lidely.com", "preenchendo campo email");
 		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo campo senha");
 		metodos.aceitarTermosEasyApply("aceitando termos de uso");
 
@@ -41,7 +41,7 @@ public class EasyApply {
 	public void candidaturaEnviadaComSucesso() {
 		metodos.esperar(8000);
 		metodos.validarTexto(el.msgCandidaturaSucesso, "obrigado por se candidatar", "validando msg de sucesso ");
-		metodos.screenShot("candidatura_rapida_sucesso");
+		metodos.screenShot("CT26-candidatura_rapida_sucesso");
 		metodos.encerrarTeste();
 
 	}
@@ -64,7 +64,7 @@ public class EasyApply {
 	public void sistemaRetornaMensagemNosCampos() {
 		metodos.esperar(2000);
 		metodos.validarTexto(el.msgErroCampoDataEasy, "", "validando msg de erro nome");
-		metodos.screenShot("campos_em_branco_easy_apply");
+		metodos.screenShot("CT27-campos_em_branco_easy_apply");
 		metodos.encerrarTeste();
 
 	}
@@ -84,7 +84,7 @@ public class EasyApply {
 	@Entao("sistema retorna um modal com mensagem de aviso")
 	public void sistemaRetornaUmModalComMensagemDeAviso() {
 		metodos.esperar(2000);
-		metodos.screenShot("nascimento_invalido_easy_apply");
+		metodos.screenShot("CT28-nascimento_invalido_easy_apply");
 		metodos.encerrarTeste();
 
 	}
@@ -96,7 +96,7 @@ public class EasyApply {
 		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
-		metodos.escrever(el.emailEasy, "nibhgvm2@deiaa.com", "preenchendo campo email");
+		metodos.escrever(el.emailEasy, "n8ib2@eiaa.com", "preenchendo campo email");
 
 	}
 
@@ -111,7 +111,7 @@ public class EasyApply {
 	public void sistemmaRetornaMensagemDeAvisoSemNumeral() {
 		metodos.esperar(1000);
 		metodos.validarTexto(el.msgErroSenhaNumeral, "1 número", "validando msg de erro sem numeral");
-		metodos.screenShot("senha_sem_numeral_easy_apply");
+		metodos.screenShot("CT29-senha_sem_numeral_easy_apply");
 		metodos.encerrarTeste();
 
 	}
@@ -137,7 +137,7 @@ public class EasyApply {
 	public void sistemmaRetornaMensagemDeAvisoNaSenhaSemMaiuscula() {
 		metodos.esperar(1000);
 		metodos.validarTexto(el.msgErroSenhaMaiuscula, "1 letra maíuscula", "validando msg de erro sem maiuscula");
-		metodos.screenShot("senha_sem_maiuscula_easy_apply");
+		metodos.screenShot("CT30-senha_sem_maiuscula_easy_apply");
 		metodos.encerrarTeste();
 
 	}
@@ -163,7 +163,7 @@ public class EasyApply {
 	public void sistemmaRetornaMensagemDeAvisoNaSenhaSemMinuscula() {
 		metodos.esperar(1000);
 		metodos.validarTexto(el.msgErroSenhaMinusclua, "1 letra minúscula", "validando msg de erro sem minuscula");
-		metodos.screenShot("senha_sem_minuscula_easy_apply");
+		metodos.screenShot("CT31-senha_sem_minuscula_easy_apply");
 		metodos.encerrarTeste();
 
 	}
@@ -189,7 +189,7 @@ public class EasyApply {
 	public void sistemmaRetornaMensagemDeAvisoNaSenhaSemOitoCaractere() {
 		metodos.esperar(1000);
 		metodos.validarTexto(el.msgErroSenhaOito, "8 caracteres", "validando msg de erro sem oito caracteres");
-		metodos.screenShot("senha_sem_oito_caracteres_easy_apply");
+		metodos.screenShot("CT32-senha_sem_oito_caracteres_easy_apply");
 		metodos.encerrarTeste();
 
 	}
@@ -216,7 +216,7 @@ public class EasyApply {
 		metodos.esperar(1000);
 		metodos.validarTexto(el.msgErroEmailEasy, "Por favor, forneça um formato de Email válido",
 				"validando msg de erro no email");
-		metodos.screenShot("teste_email_invalido_easy");
+		metodos.screenShot("CT33-teste_email_invalido_easy");
 		metodos.encerrarTeste();
 
 	}
@@ -238,14 +238,14 @@ public class EasyApply {
 	public void validoRespostaDoSistemaNoCampoNome() {
 		metodos.esperar(1000);
 		metodos.validarTexto(el.msgErroCampoNomeEasy, "", "validando msg erro nome invalido");
-		metodos.screenShot("nome_invalido_easy");
+		metodos.screenShot("CT34-nome_invalido_easy");
 		metodos.encerrarTeste();
 
 	}
 
 	@Quando("preencher campo email com dados validos")
 	public void preencherCampoEmailComDadosValidos() {
-		metodos.escrever(el.emailEasy1, "lasosi4100@cadolls.com", "preenchendo email corretamente");
+		metodos.escrever(el.emailEasy1, "diyep73287@lidely.com", "preenchendo email corretamente");
 
 	}
 
@@ -258,7 +258,7 @@ public class EasyApply {
 	@Quando("clicar no botao candidatar-se")
 	public void clicarNoBotaoCandidatarSe() {
 		metodos.clicar(el.btnCandidatarEasy, "clicando no botao candidatar se");
-		metodos.esperar(6000);
+		metodos.esperar(8000);
 
 	}
 
@@ -266,7 +266,7 @@ public class EasyApply {
 	public void loginCandiaturaRealizadaComSucesso() {
 		metodos.validarTexto(el.msgCandidaturaSucesso, "obrigado por se candidatar",
 				"validando msg candidatura efetuada");
-		metodos.screenShot("candidatura_com_sucesso");
+		metodos.screenShot("CT35-candidatura_com_sucesso");
 		metodos.esperar(1000);
 		metodos.encerrarTeste();
 
@@ -288,14 +288,14 @@ public class EasyApply {
 	public void validoRetornoDoSistema() {
 		metodos.esperar(2000);
 		metodos.validarTexto(el.msgErroEmailEasy1, "Por favor, forneça um formato de Email válido", "validando msg erro email invalido");
-		metodos.screenShot("email_invalido_easy");
-		metodos.encerrarTeste();
+		metodos.screenShot("CT36-email_invalido_easy");
+		//metodos.encerrarTeste();
 
 	}
 
 	@Quando("preencher campo senha")
 	public void preencherCampoSenha() {
-		metodos.escrever(el.emailEasy1, "widz75@mgonom.com", "escrevendo email");
+		metodos.escrever(el.emailEasy1, "usuarioteste41@yahoo.com", "escrevendo email");
 		metodos.esperar(1000);
 
 	}
@@ -311,7 +311,7 @@ public class EasyApply {
 	@Entao("valido a mensagem de retorno do sistema")
 	public void validoAMensagemDeRetornoDoSistema() {
 		metodos.esperar(1000);
-		metodos.screenShot("msg_email_ou_senha_invalidos");
+		metodos.screenShot("CT37-msg_email_ou_senha_invalidos");
 		metodos.encerrarTeste();
 
 	}
@@ -325,7 +325,7 @@ public class EasyApply {
 
 	@Entao("login social realizado com sucesso")
 	public void loginSocialRealizadoComSucesso() {
-		metodos.screenShot("login_social_facebook");
+		metodos.screenShot("CT38-login_social_facebook");
 		metodos.encerrarTeste();
 
 	}
@@ -339,7 +339,7 @@ public class EasyApply {
 
 	@Entao("login social com google com sucesso")
 	public void loginSocialComGoogleComSucesso() {
-		metodos.screenShot("login_social_google");
+		metodos.screenShot("CT39-login_social_google");
 		metodos.encerrarTeste();
 
 	}
@@ -350,7 +350,7 @@ public class EasyApply {
 		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
-		metodos.escrever(el.emailEasy, "nea5si72@kmo5to.com", "preenchendo campo email");
+		metodos.escrever(el.emailEasy, "na5k57u2@kmo5to.com", "preenchendo campo email");
 		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo campo senha");
 		metodos.aceitarTermosEasyApply("aceitando termos de uso");
 		metodos.esperar(2000);
@@ -366,7 +366,7 @@ public class EasyApply {
 	@Quando("inserir dados dos responsaveis corretamente")
 	public void inserirDadosDosResponsaveisCorretamente() {
 		metodos.escrever(el.nomeResponsavelEasy, "teste de responsavel", "nome responsavel");
-		metodos.escrever(el.emailResponsavelEasy, "teste1234@tese.com", "email respponsavel");
+		metodos.escrever(el.emailResponsavelEasy, "tesltue1234@tese.com", "email respponsavel");
 		metodos.esperar(2000);
 		metodos.clicar(el.btnProsseguir, "prosseguindo");
 		metodos.esperar(2000);
@@ -384,7 +384,7 @@ public class EasyApply {
 	public void validamosORetornoDoSistema() {
 		metodos.validarTexto(el.msgCandidaturaSucesso, "obrigado por se candidatar", "validando msg de sucesso ");
 		metodos.esperar(1000);
-		metodos.screenShot("candidatura_rapida_usuario_menor_sucesso");
+		metodos.screenShot("CT40-candidatura_rapida_usuario_menor_sucesso");
 		metodos.encerrarTeste();
 
 	}
@@ -395,7 +395,7 @@ public class EasyApply {
 		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
-		metodos.escrever(el.emailEasy, "neapa3i72@kmo5to.com", "preenchendo campo email");
+		metodos.escrever(el.emailEasy, "neki272@kmo5to.com", "preenchendo campo email");
 		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo campo senha");
 		metodos.aceitarTermosEasyApply("aceitando termos de uso");
 		metodos.esperar(2000);
@@ -420,7 +420,7 @@ public class EasyApply {
 
 	@Entao("sistema nao permite prosseguir")
 	public void sistemaNaoPermiteProsseguir() {
-		metodos.screenShot("modal_responsaveis_em_branco");
+		metodos.screenShot("CT41-modal_responsaveis_em_branco");
 		metodos.encerrarTeste();
 
 	}
@@ -431,7 +431,7 @@ public class EasyApply {
 		metodos.clicar(el.curriculoEasy, "clicando em upload de curriculo");
 		metodos.uploadArquivo("anexando curriculo");
 		metodos.esperar(1000);
-		metodos.escrever(el.emailEasy, "a1esv1e@kmo5to.com", "preenchendo campo email");
+		metodos.escrever(el.emailEasy, "a1k7e@kmo5to.com", "preenchendo campo email");
 		metodos.escrever(el.senhaEasy, "Teste123", "preenchendo campo senha");
 		metodos.aceitarTermosEasyApply("aceitando termos de uso");
 		metodos.esperar(2000);
@@ -447,7 +447,7 @@ public class EasyApply {
 	@Quando("nos campos dos responsaveis inseir nome invalido")
 	public void nosCamposDosResponsaveisInseirNomeInvalido() {
 		metodos.escrever(el.nomeResponsavelEasy, "te12", "nome responsavel");
-		metodos.escrever(el.emailResponsavelEasy, "teste1234@tese.com", "email respponsavel");
+		metodos.escrever(el.emailResponsavelEasy, "test1234@tese.com", "email respponsavel");
 		metodos.esperar(1000);
 		metodos.clicar(el.btnProsseguir, "prosseguindo");
 		metodos.esperar(1000);
@@ -456,7 +456,7 @@ public class EasyApply {
 
 	@Entao("nao permite avancar no cadastro")
 	public void naoPermiteAvancarNoCadastro() {
-		metodos.screenShot("modal_responsaveis_nome_invalido");
+		metodos.screenShot("CT42-modal_responsaveis_nome_invalido");
 		metodos.encerrarTeste();
 		
 		
@@ -490,7 +490,7 @@ public class EasyApply {
 	@Entao("validamos a mensagem de erro abaixo do campo")
 	public void validamosAMensagemDeErroAbaixoDoCampo() {
 		metodos.validarTexto(el.msgEmailInvalidoEasy, "Por favor, forneça um formato de Email válido", "validando msg de email invalido");
-		metodos.screenShot("modal_responsaveis_email_invalido");
+		metodos.screenShot("CT43-modal_responsaveis_email_invalido");
 		metodos.encerrarTeste();
 
 	}
@@ -511,7 +511,7 @@ public class EasyApply {
 	@Entao("validamos modal de retorno do sistema")
 	public void validamosModalDeRetornoDoSistema() {
 		metodos.validarTexto(el.idadeNaoPermitida, "Idade não permitida", "validadndo idade nao permitida");
-		metodos.screenShot("idade_nao_permitida_easy");
+		metodos.screenShot("CT44-idade_nao_permitida_easy");
 		metodos.encerrarTeste();
 		
 

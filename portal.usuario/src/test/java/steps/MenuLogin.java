@@ -36,7 +36,7 @@ public class MenuLogin {
 
 	@Entao("login realizado com sucesso")
 	public void loginRealizadoComSucesso() {
-		metodos.screenShot("login_email_e_senha_sucesso");
+		metodos.screenShot("CT45-login_email_e_senha_sucesso");
 		metodos.esperar(1000);
 		metodos.validarTexto(el.textoBoasVindas, "é hora de impulsionar o seu talento.", "validando texto menu home");
 		metodos.encerrarTeste();
@@ -59,7 +59,7 @@ public class MenuLogin {
 
 	@Entao("validamos a mensagem de aviso do sistema")
 	public void validamosAMensagemDeAvisoDoSistema() {
-		metodos.screenShot("campos_em_branco_login");
+		metodos.screenShot("CT46-campos_em_branco_login");
 		metodos.encerrarTeste();
 
 	}
@@ -80,7 +80,7 @@ public class MenuLogin {
 
 	@Entao("sistema informa que email ou senha estao incorretos")
 	public void sistemaInformaQueEmailOuSenhaEstaoIncorretos() {
-		metodos.screenShot("email_ou_senha_incorretos_login");
+		metodos.screenShot("CT47-email_ou_senha_incorretos_login");
 		metodos.esperar(1000);
 		metodos.encerrarTeste();
 
@@ -114,7 +114,7 @@ public class MenuLogin {
 	public void emailEnviadoComSucesso() {
 		metodos.esperar(8000);
 		metodos.validarTexto(el.msgEmailEnviado, "email enviado.", "validando msg de email enviado com sucesso");
-		metodos.screenShot("email_enviado_Resgatar_conta_antiga");
+		metodos.screenShot("CT48-email_enviado_Resgatar_conta_antiga");
 		metodos.encerrarTeste();
 
 	}
@@ -147,7 +147,7 @@ public class MenuLogin {
 	@Entao("sistema retorna uma mensagem no campo com erro")
 	public void sistemaRetornaUmaMensagemNoCampoComErro() {
 		//metodos.validarTexto(el.msgErroCampoEmail, " Por favor, preencha o campo email ", "validando msg de erro campo email");
-		metodos.screenShot("reasgatar_conta_email_invalido");
+		metodos.screenShot("CT49-reasgatar_conta_email_invalido");
 		metodos.encerrarTeste();
 
 	}
@@ -180,7 +180,7 @@ public class MenuLogin {
 	@Entao("sistema retorna uma mensagem com erro")
 	public void sistemaRetornaUmaMensagemComErro() {
 		//metodos.validarTexto(el.msgErroCampoCPF, " Por favor, preencha o campo cpf ", "validando erro no campo cpf");
-		metodos.screenShot("rasgatar_conta_cpf_invalido");
+		metodos.screenShot("CT50-rasgatar_conta_cpf_invalido");
 		metodos.encerrarTeste();
 		
 
@@ -209,7 +209,7 @@ public class MenuLogin {
 	@Entao("o email e enviado com sucesso")
 	public void oEmailEEnviadoComSucesso() {
 		metodos.validarTexto(el.msgSucesso, "email enviado.", "validando msg email enviado");
-		metodos.screenShot("esqueci_senha_email_sucesso");
+		metodos.screenShot("CT51-esqueci_senha_email_sucesso");
 		metodos.encerrarTeste();
 		
 
@@ -237,7 +237,7 @@ public class MenuLogin {
 
 	@Entao("validamos a mensagem de aviso no campo")
 	public void validamosAMensagemDeAvisoNoCampo() {
-		metodos.screenShot("esqueci_senha_campo_em_branco");
+		metodos.screenShot("CT52-esqueci_senha_email_em_branco");
 		metodos.encerrarTeste();
 
 	}
@@ -265,7 +265,7 @@ public class MenuLogin {
 	@Entao("retorna uma mensagem no campo com erro")
 	public void retornaUmaMensagemNoCampoComErro() {
 		//metodos.validarTexto(el.msgErroEmailReset, " Por favor, preencha o campo email ", "validando msg de erro no campo email");
-		metodos.screenShot("esqueci_senha_email_invalido");
+		metodos.screenShot("CT53-esqueci_senha_email_invalido");
 		metodos.encerrarTeste();
 		
 
@@ -311,5 +311,32 @@ public class MenuLogin {
 	public void loginRelizado() {
 
 	}
+	
+
+	@Quando("clicar no botao google play")
+	public void clicarNoBotaoGooglePlay() {
+	    
+	}
+	@Entao("validamos se o link redireciona corretamente")
+	public void validamosSeOLinkRedirecionaCorretamente() {
+	    
+	}
+	
+	
+
+	@Quando("clicar no botao app store")
+	public void clicarNoBotaoAppStore() {
+	    
+	}
+	@Entao("validamos se o link funciona corretamente")
+	public void validamosSeOLinkFuncionaCorretamente() {
+	    
+	}
+
+
+
+
+
+
 
 }

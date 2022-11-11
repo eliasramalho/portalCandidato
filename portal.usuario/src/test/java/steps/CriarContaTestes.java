@@ -1,4 +1,4 @@
-package steps;
+ package steps;
 
 import elementos.ElementosWeb;
 import io.cucumber.java.pt.Dado;
@@ -30,7 +30,7 @@ public class CriarContaTestes {
 	public void preencherFormularioComDadosValidos() {
 		metodos.escrever(el.nomeCompleto, "teste de novo usuario", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "16121986", "preenchendo campo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "f503@mgnom.com", "preenchendo campo email");
+		metodos.escrever(el.emailCriarConta, "f5il3@mgnom.com", "preenchendo campo email");
 		metodos.escrever(el.telefone, "11988888888", "preenchendo campo telefone");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
@@ -47,7 +47,7 @@ public class CriarContaTestes {
 	public void clicarNoBotaoCriarConta() {
 		metodos.esperar(1000);
 		metodos.clicar(el.criarConta, "clicando no botao para criar a conta");
-		metodos.esperar(5000);
+		metodos.esperar(8000);
 
 	}
 
@@ -55,7 +55,7 @@ public class CriarContaTestes {
 	public void validamosMensagemDeSucesso() {
 		metodos.validarTexto(el.msgSucessoCriarConta, "Confirme sua conta no seu e-mail",
 				"validando a tela de sucesso");
-		metodos.screenShot("criar_conta_comum_sucesso");
+		metodos.screenShot("CT15-criar_conta_comum_sucesso");
 		metodos.esperar(1000);
 		metodos.encerrarTeste();
 
@@ -86,7 +86,7 @@ public class CriarContaTestes {
 	@Entao("validamos a mensagem de aviso")
 	public void validamosAMensagemDeAviso() {
 		metodos.esperar(4000);
-		metodos.screenShot("criar_conta_campos_em_branco");
+		metodos.screenShot("CT16-criar_conta_campos_em_branco");
 		metodos.encerrarTeste();
 
 	}
@@ -100,7 +100,7 @@ public class CriarContaTestes {
 	@Quando("preencher os campos com os dados validos")
 	public void preencherOsCamposComOsDadosValidos() {
 		metodos.escrever(el.nomeCompleto, "teste data de nascimento invalida", "preenchendo campo nome");
-		metodos.escrever(el.emailCriarConta, "tesa06@teste.com", "preenchendo campo email");
+		metodos.escrever(el.emailCriarConta, "teazk06@teste.com", "preenchendo campo email");
 		metodos.escrever(el.telefone, "11988888888", "preenchendo campo telefone");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
@@ -117,7 +117,7 @@ public class CriarContaTestes {
 	public void validamosMensagemDeSucessoDoSistema() {
 		metodos.esperar(2000);
 		metodos.validarTexto(el.idadeNaoPermitida, "Idade não permitida", "validando moddal idade nao permitida");
-		metodos.screenShot("data_de_nascimento_invalido");
+		metodos.screenShot("CT17data_de_nascimento_invalido");
 		metodos.encerrarTeste();
 
 	}
@@ -146,7 +146,7 @@ public class CriarContaTestes {
 		metodos.validarTexto(el.msgEmailInvalido, "Por favor, forneça um formato de Email válido",
 				"validando email invalido");
 		metodos.esperar(1000);
-		metodos.screenShot("criar_conta_email_invalido");
+		metodos.screenShot("CT18-criar_conta_email_invalido");
 		metodos.encerrarTeste();
 
 	}
@@ -157,7 +157,7 @@ public class CriarContaTestes {
 		metodos.esperar(1000);
 		metodos.escrever(el.nomeCompleto, "teste telefone invalido", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "te223r@tes.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "tezjf23r@tes.com.com", "preenchendo email");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo conf senha");
 
@@ -174,7 +174,7 @@ public class CriarContaTestes {
 	@Entao("sistema retorna mensagem de erro no campo")
 	public void sistemaRetornaMensagemDeErroNoCampo() {
 		metodos.esperar(3000);
-		metodos.screenShot("campo_telefone_invalido");
+		metodos.screenShot("CT19-campo_telefone_invalido");
 		metodos.encerrarTeste();
 
 	}
@@ -185,7 +185,7 @@ public class CriarContaTestes {
 		metodos.esperar(1000);
 		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "test2amr@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "tkeszfamr@test.com.com", "preenchendo email");
 
 	}
 
@@ -200,7 +200,7 @@ public class CriarContaTestes {
 		metodos.esperar(3000);
 		metodos.validarTexto(el.msgSenhaMinuscula, "Pelo menos uma Letra Minúscula",
 				"validando a mensagem senha minuscula");
-		metodos.screenShot("criar_conta_senha_minuscula");
+		metodos.screenShot("CT20-criar_conta_senha_minuscula");
 		metodos.encerrarTeste();
 
 	}
@@ -211,7 +211,7 @@ public class CriarContaTestes {
 		metodos.esperar(1000);
 		metodos.escrever(el.nomeCompleto, "denha sem ltra maiuscula", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
-		metodos.escrever(el.emailCriarConta, "testmr@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "ttzkfmr@test.com.com", "preenchendo email");
 
 	}
 
@@ -226,7 +226,7 @@ public class CriarContaTestes {
 		metodos.esperar(3000);
 		metodos.validarTexto(el.msgSenhaMaiuscula, "Pelo menos uma Letra Maiúscula",
 				"validando a mensagem senha maiuscula");
-		metodos.screenShot("criar_conta_senha_maiuscula");
+		metodos.screenShot("CT21-criar_conta_senha_maiuscula");
 		metodos.encerrarTeste();
 
 	}
@@ -238,7 +238,7 @@ public class CriarContaTestes {
 		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
 		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
-		metodos.escrever(el.emailCriarConta, "tea3amr@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "t3zkafmr@test.com.com", "preenchendo email");
 
 	}
 
@@ -253,7 +253,7 @@ public class CriarContaTestes {
 		metodos.esperar(3000);
 		metodos.validarTexto(el.msgSenhaOito, "Pelo menos Oito Caracteres",
 				"validando a mensagem senha oito caracteres");
-		metodos.screenShot("criar_conta_senha_oito_caracteres");
+		metodos.screenShot("CT22-criar_conta_senha_oito_caracteres");
 		metodos.encerrarTeste();
 
 	}
@@ -265,7 +265,7 @@ public class CriarContaTestes {
 		metodos.escrever(el.nomeCompleto, "teste senha invalida", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
 		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
-		metodos.escrever(el.emailCriarConta, "t2a54r@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "t5zfk4r@test.com.com", "preenchendo email");
 
 	}
 
@@ -280,7 +280,7 @@ public class CriarContaTestes {
 		metodos.esperar(3000);
 		metodos.validarTexto(el.msgSenhaNumeral, "Pelo menos um Número ou Símbolo",
 				"validando a mensagem senha sem numeral");
-		metodos.screenShot("criar_conta_senha_sem_numeral");
+		metodos.screenShot("CT23-criar_conta_senha_sem_numeral");
 		metodos.encerrarTeste();
 
 	}
@@ -292,7 +292,7 @@ public class CriarContaTestes {
 		metodos.escrever(el.nomeCompleto, "teste nao aceitar os termos", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
 		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
-		metodos.escrever(el.emailCriarConta, "teda5r@test.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "tazkf5r@test.com.com", "preenchendo email");
 		metodos.escrever(el.senhaCriarConta, "Teste123", "preenchendo campo senha");
 		metodos.escrever(el.confSenhaCriarConta, "Teste123", "preenchendo campo confir senha");
 
@@ -306,7 +306,7 @@ public class CriarContaTestes {
 
 	@Entao("botao criar conta nao fica selecionavel")
 	public void botaoCriarContaNaoFicaSelecionavel() {
-		metodos.screenShot("criar_conta_sem_aceitar_termos");
+		metodos.screenShot("CT24-criar_conta_sem_aceitar_termos");
 		metodos.encerrarTeste();
 
 	}
@@ -318,7 +318,7 @@ public class CriarContaTestes {
 		metodos.escrever(el.nomeCompleto, "teste nao aceitar os termos", "preenchendo campo nome");
 		metodos.escrever(el.dataNascimento, "17021987", "preenchendo data de nascimento");
 		metodos.escrever(el.telefone, "11912334456", "escrevendo telefone");
-		metodos.escrever(el.emailCriarConta, "teda55r@te5st.com.com", "preenchendo email");
+		metodos.escrever(el.emailCriarConta, "tke5f5zrk@te5st.com.com", "preenchendo email");
 
 	}
 
@@ -336,7 +336,7 @@ public class CriarContaTestes {
 		metodos.validarTexto(el.msgSenhaDiferente,
 				"As senhas não coincidem, por favor, verificar se foram preenchidas corretamente",
 				"validando senhas diferentes");
-		metodos.screenShot("validando_senhas_diferenetes");
+		metodos.screenShot("CT25-validando_senhas_diferenetes");
 		metodos.encerrarTeste();
 
 	}

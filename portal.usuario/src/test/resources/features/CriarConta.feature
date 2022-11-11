@@ -10,7 +10,7 @@ Contexto: acessar a tela de cadastro comum
 Dado que eu esteja na tela de login
 
 @positivo @smoke
-Cenario: Realizar cadastro de usuario 
+Cenario: CT15-Realizar cadastro de usuario 
 Quando eu clicar no botao criar conta
 E preencher formulario com dados validos
 E aceitar os termos e condicoes e aviso de privacidade
@@ -18,63 +18,63 @@ E clicar no botao criar conta
 Entao validamos mensagem de sucesso
 
 @negativo @criarConta 
-Cenario: Preencher o cadastro com os campos todos em branco
+Cenario: CT16-Preencher o cadastro com os campos todos em branco
 Quando deixar os campos em branco
 E clicar no botao fazer login
 Mas o botao nao esta clicavel
 Entao validamos a mensagem de aviso
 
 @negativo @criarConta 
-Cenario: Preencher o cadastro com data de nascimento invalida
+Cenario: CT17-Preencher o cadastro com data de nascimento invalida
 Quando for criar a conta
 E preencher os campos com os dados validos
 E campo idade for preenchido com dado invalido
 Entao validamos mensagem de sucesso do sistema
 
 @negativo @criarConta 
-Cenario: Preencher cadastro com email invalido
+Cenario: CT18-Preencher cadastro com email invalido
 Quando colocar os dados no campo email
 E as informacoes dos dados forem invalidas
 Entao validamos a mensagem de erro no campo email
 
 @negativo @criarConta  
-Cenario: Preencher cadastro com telefone invalido
+Cenario: CT19-Preencher cadastro com telefone invalido
 Quando preencher o campo telefone
 E os dados estiverem incorretos
 Entao sistema retorna mensagem de erro no campo
 
 @negativo @criarConta @validarSenha 
-Cenario: Prencher formulario senha sem letra minuscula
+Cenario: CT20-Prencher formulario senha sem letra minuscula
 Quando clicar no campo senha
 E preencher dados sem uma letra minuscula
 Entao valido o retorno do sistema
 
 @negativo @criarConta @validarSenha 
-Cenario: Prencher cadastro senha sem letra maiuscula
+Cenario: CT21-Prencher cadastro senha sem letra maiuscula
 Quando clicar no campo de preencher senha
 E colocar dados que nao contem letra maiuscula
 Entao validamos a mensagem do sistema 
 
 @negativo @criarConta @validarSenha 
-Cenario: Prencher cadastro senha sem oito caracteres
+Cenario: CT22-Prencher cadastro senha sem oito caracteres
 Quando Clicar no campo de senha
 E Inserir dados sem os oito caraceteres
 Entao sistema retorna uma mensagem
 
 @negativo @criarConta @validarSenha  
-Cenario: Prencher cadastro senha sem numeral 
+Cenario: CT23-Prencher cadastro senha sem numeral 
 Quando preenher o campo senha
 E inseir dados que nao contem numeral
 Entao Validamos a mensagem de aviso de retorno do sistema
 
 @negativo @criarConta @validarTermos 
-Cenario: criar usuario e nao aceitar os termos de uso
+Cenario: CT24-Criar usuario e nao aceitar os termos de uso
 Quando preencher formulario para criar novo usuario
 Mas nao aceitar os termos
 Entao botao criar conta nao fica selecionavel
 
 @negativo @criarConta @validarSenha
-Cenario: Cricar um novo usuario com senhas diferentes
+Cenario: CT25-Cricar um novo usuario com senhas diferentes
 Quando acessar o portal para criar um novo usario
 E preencher com senhas diferentes
 Entao validamos o retorno do erro nas senhas
